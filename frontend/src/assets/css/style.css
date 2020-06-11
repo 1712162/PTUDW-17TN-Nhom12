@@ -1,0 +1,219 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #FAFAFA;
+}
+
+@media(min-width: 992px) {
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+.navbar-light {
+    background-color: #FFB347;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #fff;
+    font-size: 18px;
+}
+.btn:focus {
+    box-shadow: none;
+}
+
+.navbar .btn i {
+    color: #fff;
+}
+
+.navbar .input-group-append .btn i {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.input-group>.custom-file .custom-file-input:focus~.custom-file-label, .input-group>.custom-select:focus, .input-group>.form-control:focus{
+    z-index: 0;
+}
+
+.fa {
+    font-size: 20px;
+}
+
+.navbar .form-control {
+   height:  calc(1.5em + .5rem );
+}
+
+.navbar .form-control:focus {
+   box-shadow: none;
+ }
+ 
+
+.navbar .navbar-brand {
+    font-family: 'Sue Ellen Francisco', cursive;
+    color: #fff;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-size: 30px;
+}
+
+.navbar .navbar-brand:hover {
+    color: #fff;
+}
+.navbar .navbar-brand:focus {
+    color: #fff;
+}
+
+.navbar {
+    padding: 0 1rem;
+}
+
+footer {
+    color: #fff;
+    background-color: #1F1F1F;
+    padding-bottom: 5px;
+}
+
+#email {
+    color: #1FFFFF;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+a:hover {
+    text-decoration: none;
+    color:#FFB347;
+}
+
+li {
+    list-style: none;
+}
+
+footer h5 {
+    color: #FFB347;
+}
+
+#logo {
+    font-family: 'Sue Ellen Francisco', cursive;
+    font-size: 4rem;
+}
+
+footer .fa{
+    font-size: 2rem;
+    padding: 0px 20px;
+    color: #D3D3D3;
+}
+
+.trademark {
+    font-size: .75rem;
+    color: #D3D3D3;
+}
+
+.banner {
+    position: relative;
+    text-align: center;
+    height: 300px;
+    width: 100%;
+}
+.banner img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(50%);
+}
+.banner-text {
+    font-family: 'Sue Ellen Francisco', cursive;
+    font-size: 2rem;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.banner-text h1 {
+    color: #FFB347;
+    font-size: 4rem;
+}
+
+@media(max-width: 720px) {
+    .banner-text {
+        font-size: 1.5rem;
+    }
+    .banner-text h1 {
+        font-size: 2.5rem;
+    }
+}
+
+.filter li:hover {
+    color: #FFB347;
+}
+.card-img-top {
+    width: 100%;
+    height: 18rem;
+    object-fit: cover;
+}
+
+.dicuss-card-img-top {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+}
+.page-link {
+    color: #000;
+}
+.page-link:hover, .page-item.active .page-link{
+    color: #fff;
+    background-color: #FFB347;
+    border: none;
+}
+.page-link {
+    border: none;
+    background-color: #FAFAFA;
+    border-left: 1px solid #000;
+    padding: .15rem 0.75rem;
+}
+
+.page-link:focus {
+    box-shadow: none;
+}
+
+.page-item:first-child .page-link {
+    border: none;
+}
+
+.page-item.disabled .page-link {
+    background-color: #FAFAFA;
+}
+
+.profile-image {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+#info-cards .fa {
+    font-size: 100px;
+}
+.title {
+    font-family: 'Sue Ellen Francisco', cursive;
+    font-size: 3.5rem;
+    text-align: center;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+.stars
+{
+    margin: 20px 0;
+    font-size: 24px;
+    color: #d17581;
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>VSG- Virtual Online Group, Connect with your study buddies</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="./assets/css/style.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">VSG</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="index.html">Explore</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="build.html">Build</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="discuss.html">Dicuss</a>
+                    </li>
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0">
+                    <div class="input-group">
+                        <input class="form-control py-2 rounded-pill mr-1 pr-5" type="text">
+                        <span class="input-group-append">
+                            <button class="btn rounded-pill border-0 ml-n5" type="button">
+                                  <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                    <button class="btn my-2 my-sm-0" id="notify" data-container="body" data-toggle="popover" data-placement="bottom" data-content="You receive a message"><i class="fa fa-bell lg"></i></button>
+                    <button class="btn my-2 my-sm-0" id="user"><i class="fa fa-user-circle text-dark"></i></button>
+                  </form>
+                </div>
+            </div>
+        </nav>
+        <main class="container-fluid">
+            <div class="text-center m-5">
+                <img src="assets/image/avatar.jpg" class="profile-image">
+                <h1 class="mt-3">Huynh Quoc Dung</h1>
+                <p><span>30</span> Followers</p>
+                <p><i class="fa fa-map-marker"></i> Caifornia, United States</p>
+                <p><i class="fa fa-envelope"></i> sarahcal12@gmail.com</p>
+                <button class="btn btn-warning text-light px-3" id="editProfileButt">Edit profile</button>
+                <div class="modal fade text-left" id="editProfileForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <button type="button" class="close text-right pr-1" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        <div class="modal-body px-3">
+                            <form>
+                                <div class="form-group">
+                                  <label for="input-username">Username</label>
+                                  <input type="text" class="form-control bg-light" id="input-username" >
+                                </div>
+                                <div class="form-group">
+                                  <label for="input-location">Add location</label>
+                                  <textarea id="input-location" class="form-control bg-light"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="input-email">Add email</label>
+                                    <input type="email" class="form-control bg-light" id="input-email" >
+                                </div>
+                                <div class="form-group row">
+                                    <label for="input-file" class="col-sm-4">Cover image</label>
+                                    <input type="file" class="form-control-file col-sm-8" id="input-file">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-warning text-light">Save</button>
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-5 mx-3" id="info-cards">
+                <div class="mb-2 mb-sm-0 col-sm-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <i class="fa fa-graduation-cap"></i>
+                            <h3>Join <span>23</span> study group</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-2 mb-sm-0  col-sm-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <i class="fa fa-gavel"></i>
+                            <h3>Join <span>23</span> study group</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-2 mb-sm-0 col-sm-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <i class="fa fa-pause-circle"></i>
+                            <h3><span>5</span> Waiting list</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="container-fluid pt-4">
+            <div class="d-flex flex-md-row flex-column align-items-center align-items-md-start">
+                <div class="mr-md-auto text-center text-md-left">
+                    <h5 id="logo">VSG</h5>
+                    <p class="mb-0">225 Nguyen Van Cu Street Ward 4, District 5 HCMC</p>
+                    <p>Phone: (+84) 123456789</p>
+                </div>
+                <div class="text-center text-md-left mb-3 mr-md-5">
+                    <h5>Sitemap</h5>
+                    <div class="d-flex flex-row flex-md-column justify-content-around">
+                        <a href="index.html" class="mr-2">Explore</a>
+                        <a href="dashboard.html" class="mr-2">Dashboard</a>
+                        <a href="build.html" class="mr-2">Build</a>
+                        <a href="discuss.html" class="mr-2">Dicuss</a>
+                    </div>
+                   
+                </div>
+                <div class="text-center text-md-left ml-md-5" style="width: 300px;">
+                    <h5>Contact us</h5>
+                    <p class="mb-0">Have a quetion? Email us at <span id="email">team12@gmail.com</span> We’ll glad to help !</p>
+                    <div class="d-flex flex-row flex-md-column justify-content-center">
+                        <a href="#" class="mr-2">Help</a>
+                        <a href="#" class="mr-2">About</a>
+                        <a href="#" class="mr-2">Privacy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <i class="fa fa-facebook-square"></i>
+                <i class="fa fa-twitter-square"></i>
+                <i class="fa fa-github-square"></i>
+                <i class="fa fa-linkedin-square"></i>
+                <p class="mt-2 pb-3 trademark">Copyright © 2020 VSG - Virtual Study Groups</p>
+            </div>
+        </footer>
+        <script src="./assets/js/script.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    </body>
+</html>

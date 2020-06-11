@@ -1,0 +1,5 @@
+#rating { font-size: 0; }
+#rating span { font-size: 50px; }
+#rating span::before { content: "☆"; }
+#rating span.active::before {content: "★"; color: #ffc107;}
+#rating span:hover { cursor: pointer;}
