@@ -1,6 +1,6 @@
 document.getElementById("user").addEventListener("click", function(e) {
     e.preventDefault();
-    window.location.href = "profile.html";
+    window.location.href ='../profile.html';
 })
 
 document.getElementById("notify").addEventListener("click", function(e) {
@@ -81,6 +81,6 @@ if (ratings) ratings.addEventListener('click', function (e) {
 const groups = document.querySelectorAll('.gotochat');
 if (groups) groups.forEach(function(group) {
     group.addEventListener('click', function (e) {
-        window.location.href = 'dark-mode.html';
+        window.location.href = '../chat/dark-mode/dark-mode.html';
     }) 
 })
