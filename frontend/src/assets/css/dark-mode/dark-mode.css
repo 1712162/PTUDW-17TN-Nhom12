@@ -81,9 +81,11 @@ body {
   width: 100%;
 }
 
-.body-discuss .row {}
+.body-discuss .row {
+}
 
-.body-discuss .row .content {}
+.body-discuss .row .content {
+}
 
 /* message */
 
@@ -126,13 +128,15 @@ body {
   align-items: center;
 }
 
-.body-discuss .row .message .search-message input, .body-discuss .row .message .input-message input {
+.body-discuss .row .message .search-message input,
+.body-discuss .row .message .input-message input {
   border-radius: 20px;
   background-color: var(--message-content-background-color);
   border-color: var(--message-content-background-color);
 }
 
-.body-discuss .row .message .search-message i, .body-discuss .row .message .input-message i {
+.body-discuss .row .message .search-message i,
+.body-discuss .row .message .input-message i {
   width: 80px;
   display: flex;
   align-items: center;
@@ -141,7 +145,8 @@ body {
   cursor: pointer;
 }
 
-.body-discuss .row .message .search-message i:hover, .body-discuss .row .message .input-message i:hover {
+.body-discuss .row .message .search-message i:hover,
+.body-discuss .row .message .input-message i:hover {
   color: var(--message-content-color);
 }
 
@@ -184,7 +189,12 @@ body {
   cursor: pointer;
 }
 
-.body-discuss .row .message .content-group-message .another-message .message-content {
+.body-discuss
+  .row
+  .message
+  .content-group-message
+  .another-message
+  .message-content {
   margin-left: 15px;
   font-family: var(--font-family);
   font-size: 0.8rem;
@@ -208,7 +218,12 @@ body {
   margin: 30px auto;
 }
 
-.body-discuss .row .message .content-group-message .my-message .my-message-content {
+.body-discuss
+  .row
+  .message
+  .content-group-message
+  .my-message
+  .my-message-content {
   margin-right: 15px;
   font-family: var(--font-family);
   font-size: 0.8rem;
@@ -255,7 +270,8 @@ body {
   color: var(--my-message-content-background-color);
 }
 
-.body-discuss .row .content .list-discuss {}
+.body-discuss .row .content .list-discuss {
+}
 
 .body-discuss .row .content .list-discuss .list-item {
   display: flex;
@@ -263,6 +279,7 @@ body {
   border-radius: 2px;
   margin: 5px auto;
   box-shadow: -2px 2px 3px 0px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s linear;
 }
 
 .body-discuss .row .content .list-discuss .list-item:hover {
@@ -276,7 +293,13 @@ body {
   margin-top: 15px;
 }
 
-.body-discuss .row .content .list-discuss .list-item .publish-infor .time-publish {
+.body-discuss
+  .row
+  .content
+  .list-discuss
+  .list-item
+  .publish-infor
+  .time-publish {
   font-family: var(--font-family);
   font-style: normal;
   font-weight: 200;
@@ -286,7 +309,13 @@ body {
   margin: auto 10px;
 }
 
-.body-discuss .row .content .list-discuss .list-item .publish-infor .author-publish {
+.body-discuss
+  .row
+  .content
+  .list-discuss
+  .list-item
+  .publish-infor
+  .author-publish {
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
@@ -334,7 +363,13 @@ body {
   color: var(--message-content-color);
 }
 
-.body-discuss .row .content .list-discuss .list-item .items-contact .number-reaction {
+.body-discuss
+  .row
+  .content
+  .list-discuss
+  .list-item
+  .items-contact
+  .number-reaction {
   margin-right: 10px;
 }
 
@@ -367,7 +402,8 @@ body {
   cursor: pointer;
 }
 
-.body-discuss .row .content .list-page div:hover, .body-discuss .row .content .list-page .page-number:hover {
+.body-discuss .row .content .list-page div:hover,
+.body-discuss .row .content .list-page .page-number:hover {
   color: var(--my-message-content-background-color);
 }
 

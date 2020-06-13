@@ -81,9 +81,11 @@ body {
   width: 100%;
 }
 
-.body-discuss .row {}
+.body-discuss .row {
+}
 
-.body-discuss .row .content {}
+.body-discuss .row .content {
+}
 
 /* message */
 
@@ -126,13 +128,15 @@ body {
   align-items: center;
 }
 
-.body-discuss .row .message .search-message input, .body-discuss .row .message .input-message input {
+.body-discuss .row .message .search-message input,
+.body-discuss .row .message .input-message input {
   border-radius: 20px;
   background-color: var(--message-content-background-color);
   border-color: var(--message-content-background-color);
 }
 
-.body-discuss .row .message .search-message i, .body-discuss .row .message .input-message i {
+.body-discuss .row .message .search-message i,
+.body-discuss .row .message .input-message i {
   width: 80px;
   display: flex;
   align-items: center;
@@ -141,7 +145,8 @@ body {
   cursor: pointer;
 }
 
-.body-discuss .row .message .search-message i:hover, .body-discuss .row .message .input-message i:hover {
+.body-discuss .row .message .search-message i:hover,
+.body-discuss .row .message .input-message i:hover {
   color: var(--message-content-color);
 }
 
@@ -184,7 +189,12 @@ body {
   cursor: pointer;
 }
 
-.body-discuss .row .message .content-group-message .another-message .message-content {
+.body-discuss
+  .row
+  .message
+  .content-group-message
+  .another-message
+  .message-content {
   margin-left: 15px;
   font-family: var(--font-family);
   font-size: 0.8rem;
@@ -208,7 +218,12 @@ body {
   margin: 30px auto;
 }
 
-.body-discuss .row .message .content-group-message .my-message .my-message-content {
+.body-discuss
+  .row
+  .message
+  .content-group-message
+  .my-message
+  .my-message-content {
   margin-right: 15px;
   font-family: var(--font-family);
   font-size: 0.8rem;
@@ -253,7 +268,8 @@ body {
   cursor: pointer;
 }
 
-.body-discuss .row .content .list-page div:hover, .body-discuss .row .content .list-page .page-number:hover {
+.body-discuss .row .content .list-page div:hover,
+.body-discuss .row .content .list-page .page-number:hover {
   color: var(--my-message-content-background-color);
 }
 
@@ -294,7 +310,8 @@ body {
 
 /* list file uploaded */
 
-.body-discuss .row .content .list-file-uploaded {}
+.body-discuss .row .content .list-file-uploaded {
+}
 
 .body-discuss .row .content .list-file-uploaded .item-file-uploaded {
   margin: 10px 60px;
@@ -302,6 +319,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   box-shadow: -2px 2px 3px 0px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s linear;
 }
 
 .body-discuss .row .content .list-file-uploaded .item-file-uploaded:hover {
@@ -309,7 +327,12 @@ body {
   cursor: pointer;
 }
 
-.body-discuss .row .content .list-file-uploaded .item-file-uploaded .link-item-file-uploaded {
+.body-discuss
+  .row
+  .content
+  .list-file-uploaded
+  .item-file-uploaded
+  .link-item-file-uploaded {
   justify-self: center;
   text-decoration: none;
   color: var(--my-message-content-background-color);
@@ -320,11 +343,21 @@ body {
   line-height: 21px;
 }
 
-.body-discuss .row .content .list-file-uploaded .item-file-uploaded .link-item-file-uploaded:hover {
+.body-discuss
+  .row
+  .content
+  .list-file-uploaded
+  .item-file-uploaded
+  .link-item-file-uploaded:hover {
   color: var(--button-hover-color);
 }
 
-.body-discuss .row .content .list-file-uploaded .item-file-uploaded .time-item-file-uploaded {
+.body-discuss
+  .row
+  .content
+  .list-file-uploaded
+  .item-file-uploaded
+  .time-item-file-uploaded {
   justify-self: center;
   font-family: var(--font-family);
   font-style: normal;
@@ -334,7 +367,12 @@ body {
   color: var(--message-content-color);
 }
 
-.body-discuss .row .content .list-file-uploaded .item-file-uploaded .author-item-file-uploaded {
+.body-discuss
+  .row
+  .content
+  .list-file-uploaded
+  .item-file-uploaded
+  .author-item-file-uploaded {
   justify-self: center;
   font-family: Roboto;
   font-style: normal;
