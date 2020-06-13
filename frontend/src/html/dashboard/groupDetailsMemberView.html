@@ -1,204 +1,262 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>VSG- Virtual Online Group, Connect with your study buddies</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="../../assets/css/style.css">
-        <link rel="stylesheet" href="../../assets/css/ratings.css">
-    </head>
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="../explore/explore.html">VSG</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
+  <head>
+    <title>VSG- Virtual Online Group, Connect with your study buddies</title>
+    <link rel="stylesheet"
+      href="../../assets/css/vender/bootstrap/bootstrap.min.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/ratings.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../explore/explore.html">VSG</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../explore/explore.html">Explore<span
+                  class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="../dashboard/dashboard.html">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../create/build.html">Build</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../dicuss/discuss.html">Dicuss</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <div class="input-group">
+              <input class="form-control py-2 rounded-pill mr-1 pr-5"
+                type="text">
+              <span class="input-group-append">
+                <button class="btn rounded-pill border-0 ml-n5" type="button">
+                  <i class="fa fa-search"></i>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                      <a class="nav-link" href="../explore/explore.html">Explore<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item active">
-                      <a class="nav-link" href="../dashboard/dashboard.html">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../create/build.html">Build</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="../dicuss/discuss.html">Dicuss</a>
-                    </li>
-                  </ul>
-                  <form class="form-inline my-2 my-lg-0">
-                    <div class="input-group">
-                        <input class="form-control py-2 rounded-pill mr-1 pr-5" type="text">
-                        <span class="input-group-append">
-                            <button class="btn rounded-pill border-0 ml-n5" type="button">
-                                  <i class="fa fa-search"></i>
-                            </button>
-                        </span>
-                    </div>
-                    <button class="btn my-2 my-sm-0" id="notify" data-container="body" data-toggle="popover" data-placement="bottom" data-content="You receive a message"><i class="fa fa-bell lg"></i></button>
-                    <button class="btn my-2 my-sm-0" id="user"><i class="fa fa-user-circle"></i></button>
-                  </form>
-                </div>
+              </span>
             </div>
-        </nav>
-        <main>
-            <div class="container-fluid">
-                <div class="card">
-                    <div class="row no-gutters">
-                      <div class="col-md-4 pb-none">
-                        <div class="p-3">
-                            <img src="../../assets/image/group.jpg" class="card-img-top" alt="...">
-                            <div class="btn-group w-100">
-                                <button class="btn btn-warning text-light rounded-0 mt-2 mr-2 gotochat"><i class="fa fa-paper-plane mr-1"></i>Go to group</button>
-                                <button class="btn btn-danger rounded-0 mt-2" id="quitGroupButt"><i class="fa fa-minus-circle"></i> Quit group</button>
-                                <div class="modal fade" id="quitGroupForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                      <div class="modal-content">
-                                        <button type="button" class="close text-right pr-1" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                          </button>
-                                        <div class="modal-body px-3 text-center">
-                                            <form>
-                                              <label>Do you really want to quit this group ?</label>
-                                              <div>
-                                                <button type="button" id="quitYesButt" class="btn btn-warning text-light w-25">Yes</button>
-                                                <button type="button" class="btn btn-secondary w-25" data-dismiss="modal">No</button>
-                                              </div>           
-                                            </form>
-                                        </div>
-                                      </div>
-                                    </div>
-                                </div>
-                                <div class="modal fade" id="commentForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                      <div class="modal-content">
-                                        <button type="button" class="close text-right pr-1" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                          </button>
-                                        <div class="modal-body px-3">
-                                            <form class="p-2">
-                                                <label>What do you think about this group ?</label>
-                                                <div id='rating' class="text-center">
-                                                    <span></span>
-                                                    <span></span>
-                                                    <span></span>
-                                                    <span></span>
-                                                    <span></span>
-                                                  </div>                                                
-                                                  <div class="form-group">
-                                                    <label for="input-title">Leave a comment</label>
-                                                    <textarea class="form-control" id="input-title" ></textarea>
-                                                  </div>                                              
-                                                <div>
-                                                <div class="button-group float-right">
-                                                    <button type="button" class="btn btn-warning text-light" data-dismiss="modal">OK</button>
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Skip</button>
-                                                </div>
-                                              </div>           
-                                            </form>
-                                        </div>
-                                      </div>
-                                    </div>
-                                </div>
-                               
+            <button class="btn my-2 my-sm-0" id="notify" data-container="body"
+              data-toggle="popover" data-placement="bottom" data-content="You
+              receive a message"><i class="fa fa-bell lg"></i></button>
+            <button class="btn my-2 my-sm-0" id="user"><i class="fa
+                fa-user-circle"></i></button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div class="container-fluid">
+        <div class="card">
+          <div class="row no-gutters">
+            <div class="col-md-4 pb-none">
+              <div class="p-3">
+                <img src="../../assets/image/group.jpg" class="card-img-top"
+                  alt="...">
+                <div class="btn-group w-100">
+                  <button class="btn btn-warning text-light rounded-0 mt-2 mr-2
+                    gotochat"><i class="fa fa-paper-plane mr-1"></i>Go to group</button>
+                  <button class="btn btn-danger rounded-0 mt-2"
+                    id="quitGroupButt"><i class="fa fa-minus-circle"></i> Quit
+                    group</button>
+                  <div class="modal fade" id="quitGroupForm" tabindex="-1"
+                    role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <button type="button" class="close text-right pr-1"
+                          data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                        <div class="modal-body px-3 text-center">
+                          <form>
+                            <label>Do you really want to quit this group ?</label>
+                            <div>
+                              <button type="button" id="quitYesButt" class="btn
+                                btn-warning text-light w-25">Yes</button>
+                              <button type="button" class="btn btn-secondary
+                                w-25" data-dismiss="modal">No</button>
                             </div>
-                        </div>
-                    </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <h5 class="card-title font-weight-bold text-warning">Statistics 101</h5>
-                          <p class="card-text"><strong>Description</strong> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut magni, quam temporibus cum esse alias voluptates necessitatibus ut dolorum doloremque quas rem molestias a nemo soluta maxime quae, saepe deleniti eaque repellat placeat! Ad, pariatur voluptas. Explicabo eius ipsam nostrum, blanditiis assumenda vero exercitationem veniam repellat animi consequatur iusto nulla!</p>
-                          <p class="card-text"><strong>Owner</strong></p>
-                          <p class="card-text"><strong>Members</strong> <span>35</span></p>
-                          <p class="card-text"><strong>Created date</strong> <span>3/4/2020</span></p>
-                          <p class="card-text"><strong>Star</strong> <span>34</span></p>
+                          </form>
                         </div>
                       </div>
                     </div>
-                </div>
-                <div class="mt-5">
-                    <h3 class="mb-2 text-center text-md-left"><i class="fa fa-comments" style="font-size: 2rem;"></i> Comments</h3>
-                    <div class="container-fluid">
-                        <div class="row flex-column flex-sm-row border-top border-bottom py-2 align-items-center align-items-sm-left">
-                            <div class="col-3">
-                                <img src="../../assets/image/avatar.jpg" class=" avatar rounded-circle">
-                                <p class="m-2 font-weight-bold">LuuChiTam</p>
+                  </div>
+                  <div class="modal fade" id="commentForm" tabindex="-1"
+                    role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <button type="button" class="close text-right pr-1"
+                          data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                        <div class="modal-body px-3">
+                          <form class="p-2">
+                            <label>What do you think about this group ?</label>
+                            <div id='rating' class="text-center">
+                              <span></span>
+                              <span></span>
+                              <span></span>
+                              <span></span>
+                              <span></span>
                             </div>
-                            <div class="col-9">
-                                <p class="card-subtitle mb-2"><small class="text-muted">1 day ago</small></p>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, minus earum commodi dicta ratione sint quidem saepe corrupti dignissimos excepturi ipsa quaerat, omnis impedit doloribus repellendus quia temporibus perspiciatis aliquam.</p>
+                            <div class="form-group">
+                              <label for="input-title">Leave a comment</label>
+                              <textarea class="form-control" id="input-title"></textarea>
                             </div>
+                            <div>
+                              <div class="button-group float-right">
+                                <button type="button" class="btn btn-warning
+                                  text-light" data-dismiss="modal">OK</button>
+                                <button type="button" class="btn btn-secondary"
+                                  data-dismiss="modal">Skip</button>
+                              </div>
+                            </div>
+                          </form>
                         </div>
-                        <div class="row flex-column flex-sm-row border-top border-bottom py-2 align-items-center align-items-sm-left">
-                            <div class="col-3">
-                                <img src="../../assets/image/avatar.jpg" class=" avatar rounded-circle">
-                                <p class="m-2 font-weight-bold">LuuChiTam</p>
-                            </div>
-                            <div class="col-9">
-                                <p class="card-subtitle mb-2"><small class="text-muted">1 day ago</small></p>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, minus earum commodi dicta ratione sint quidem saepe corrupti dignissimos excepturi ipsa quaerat, omnis impedit doloribus repellendus quia temporibus perspiciatis aliquam.</p>
-                            </div>
-                        </div>
-                        <div class="row flex-column flex-sm-row border-top border-bottom py-2 align-items-center align-items-sm-left">
-                            <div class="col-3">
-                                <img src="../../assets/image/avatar.jpg" class=" avatar rounded-circle">
-                                <p class="m-2 font-weight-bold">LuuChiTam</p>
-                            </div>
-                            <div class="col-9">
-                                <p class="card-subtitle mb-2"><small class="text-muted">1 day ago</small></p>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, minus earum commodi dicta ratione sint quidem saepe corrupti dignissimos excepturi ipsa quaerat, omnis impedit doloribus repellendus quia temporibus perspiciatis aliquam.</p>
-                            </div>
-                        </div>
-                    </div> 
-                </div>
-                <div class="text-center mt-4 mb-5">
-                    <a class="text-warning font-weight-bold" style="font-size: 1.5rem;">SEE MORE COMMENTS</a>
-                </div>
-            </div>
-        </main>
-        <footer class="container-fluid pt-4">
-            <div class="d-flex flex-md-row flex-column align-items-center align-items-md-start">
-                <div class="mr-md-auto text-center text-md-left">
-                    <h5 id="logo">VSG</h5>
-                    <p class="mb-0">225 Nguyen Van Cu Street Ward 4, District 5 HCMC</p>
-                    <p>Phone: (+84) 123456789</p>
-                </div>
-                <div class="text-center text-md-left mb-3 mr-md-5">
-                    <h5>Sitemap</h5>
-                    <div class="d-flex flex-row flex-md-column justify-content-around">
-                        <a href="../explore/explore.html" class="mr-2">Explore</a>
-                        <a href="../dashboard/dashboard.html" class="mr-2">Dashboard</a>
-                        <a href="../create/build.html" class="mr-2">Build</a>
-                        <a href="../dicuss/discuss.html" class="mr-2">Dicuss</a>
+                      </div>
                     </div>
-                   
+                  </div>
+
                 </div>
-                <div class="text-center text-md-left ml-md-5" style="width: 300px;">
-                    <h5>Contact us</h5>
-                    <p class="mb-0">Have a quetion? Email us at <span id="email">team12@gmail.com</span> We’ll glad to help !</p>
-                    <div class="d-flex flex-row flex-md-column justify-content-center">
-                        <a href="#" class="mr-2">Help</a>
-                        <a href="#" class="mr-2">About</a>
-                        <a href="#" class="mr-2">Privacy</a>
-                    </div>
-                </div>
+              </div>
             </div>
-            <div class="text-center mt-5">
-                <i class="fa fa-facebook-square"></i>
-                <i class="fa fa-twitter-square"></i>
-                <i class="fa fa-github-square"></i>
-                <i class="fa fa-linkedin-square"></i>
-                <p class="mt-2 pb-3 trademark">Copyright © 2020 VSG - Virtual Study Groups</p>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title font-weight-bold text-warning">Statistics
+                  101</h5>
+                <p class="card-text"><strong>Description</strong> Lorem ipsum
+                  dolor, sit amet consectetur adipisicing elit. Aut magni, quam
+                  temporibus cum esse alias voluptates necessitatibus ut dolorum
+                  doloremque quas rem molestias a nemo soluta maxime quae, saepe
+                  deleniti eaque repellat placeat! Ad, pariatur voluptas.
+                  Explicabo eius ipsam nostrum, blanditiis assumenda vero
+                  exercitationem veniam repellat animi consequatur iusto nulla!</p>
+                <p class="card-text"><strong>Owner</strong></p>
+                <p class="card-text"><strong>Members</strong> <span>35</span></p>
+                <p class="card-text"><strong>Created date</strong> <span>3/4/2020</span></p>
+                <p class="card-text"><strong>Star</strong> <span>34</span></p>
+              </div>
             </div>
-        </footer>
-        <script src="../../assets/js/script.js"></script>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    </body>
+          </div>
+        </div>
+        <div class="mt-5">
+          <h3 class="mb-2 text-center text-md-left"><i class="fa fa-comments"
+              style="font-size: 2rem;"></i> Comments</h3>
+          <div class="container-fluid">
+            <div class="row flex-column flex-sm-row border-top border-bottom
+              py-2 align-items-center align-items-sm-left">
+              <div class="col-3">
+                <img src="../../assets/image/avatar.jpg" class="avatar
+                  rounded-circle">
+                <p class="m-2 font-weight-bold">LuuChiTam</p>
+              </div>
+              <div class="col-9">
+                <p class="card-subtitle mb-2"><small class="text-muted">1 day
+                    ago</small></p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Accusamus, minus earum commodi dicta ratione sint quidem saepe
+                  corrupti dignissimos excepturi ipsa quaerat, omnis impedit
+                  doloribus repellendus quia temporibus perspiciatis aliquam.</p>
+              </div>
+            </div>
+            <div class="row flex-column flex-sm-row border-top border-bottom
+              py-2 align-items-center align-items-sm-left">
+              <div class="col-3">
+                <img src="../../assets/image/avatar.jpg" class="avatar
+                  rounded-circle">
+                <p class="m-2 font-weight-bold">LuuChiTam</p>
+              </div>
+              <div class="col-9">
+                <p class="card-subtitle mb-2"><small class="text-muted">1 day
+                    ago</small></p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Accusamus, minus earum commodi dicta ratione sint quidem saepe
+                  corrupti dignissimos excepturi ipsa quaerat, omnis impedit
+                  doloribus repellendus quia temporibus perspiciatis aliquam.</p>
+              </div>
+            </div>
+            <div class="row flex-column flex-sm-row border-top border-bottom
+              py-2 align-items-center align-items-sm-left">
+              <div class="col-3">
+                <img src="../../assets/image/avatar.jpg" class="avatar
+                  rounded-circle">
+                <p class="m-2 font-weight-bold">LuuChiTam</p>
+              </div>
+              <div class="col-9">
+                <p class="card-subtitle mb-2"><small class="text-muted">1 day
+                    ago</small></p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Accusamus, minus earum commodi dicta ratione sint quidem saepe
+                  corrupti dignissimos excepturi ipsa quaerat, omnis impedit
+                  doloribus repellendus quia temporibus perspiciatis aliquam.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4 mb-5">
+          <a class="text-warning font-weight-bold" style="font-size: 1.5rem;">SEE
+            MORE COMMENTS</a>
+        </div>
+      </div>
+    </main>
+    <footer class="container-fluid pt-4">
+      <div class="d-flex flex-md-row flex-column align-items-center
+        align-items-md-start">
+        <div class="mr-md-auto text-center text-md-left">
+          <h5 id="logo">VSG</h5>
+          <p class="mb-0">225 Nguyen Van Cu Street Ward 4, District 5 HCMC</p>
+          <p>Phone: (+84) 123456789</p>
+        </div>
+        <div class="text-center text-md-left mb-3 mr-md-5">
+          <h5>Sitemap</h5>
+          <div class="d-flex flex-row flex-md-column justify-content-around">
+            <a href="../explore/explore.html" class="mr-2">Explore</a>
+            <a href="../dashboard/dashboard.html" class="mr-2">Dashboard</a>
+            <a href="../create/build.html" class="mr-2">Build</a>
+            <a href="../dicuss/discuss.html" class="mr-2">Dicuss</a>
+          </div>
+
+        </div>
+        <div class="text-center text-md-left ml-md-5" style="width: 300px;">
+          <h5>Contact us</h5>
+          <p class="mb-0">Have a quetion? Email us at <span id="email">team12@gmail.com</span>
+            We’ll glad to help !</p>
+          <div class="d-flex flex-row flex-md-column justify-content-center">
+            <a href="#" class="mr-2">Help</a>
+            <a href="#" class="mr-2">About</a>
+            <a href="#" class="mr-2">Privacy</a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-5">
+        <i class="fa fa-facebook-square"></i>
+        <i class="fa fa-twitter-square"></i>
+        <i class="fa fa-github-square"></i>
+        <i class="fa fa-linkedin-square"></i>
+        <p class="mt-2 pb-3 trademark">Copyright © 2020 VSG - Virtual Study
+          Groups</p>
+      </div>
+    </footer>
+    <script src="../../assets/js/vender/jquery-3.5.1.slim.min.js"></script>
+    <script src="../../assets/js/vender/popper.min.js"></script>
+    <script src="../../assets/js/vender/bootstrap.min.js"></script>
+    <script src="../../assets/js/script.js"></script>
+  </body>
 </html>

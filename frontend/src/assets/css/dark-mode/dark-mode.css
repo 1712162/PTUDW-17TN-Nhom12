@@ -227,7 +227,7 @@ body {
 /* Content */
 
 .body-discuss .row .content {
-  background-color: var(--message-content-background-color);
+  background-color: var(--background-message);
 }
 
 .body-discuss .row .content .options-bar {
@@ -260,9 +260,14 @@ body {
 .body-discuss .row .content .list-discuss .list-item {
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--background-message);
   border-radius: 2px;
   margin: 5px auto;
+  box-shadow: -2px 2px 3px 0px rgba(0, 0, 0, 0.2);
+}
+
+.body-discuss .row .content .list-discuss .list-item:hover {
+  box-shadow: -2px 2px 4px 0px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
 }
 
 .body-discuss .row .content .list-discuss .list-item .publish-infor {

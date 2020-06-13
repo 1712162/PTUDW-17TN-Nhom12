@@ -227,7 +227,7 @@ body {
 /* option bar */
 
 .body-discuss .row .content {
-  background-color: var(--message-content-background-color);
+  background-color: var(--background-message);
 }
 
 .body-discuss .row .content .options-bar {
@@ -278,7 +278,7 @@ body {
 }
 
 .body-discuss .row .content .ask-content .input-group .form-control {
-  background-color: var(--background-message);
+  background-color: var(--message-content-background-color);
   height: 100%;
   border: none;
   color: var(--message-content-color);

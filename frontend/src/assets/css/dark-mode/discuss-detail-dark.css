@@ -227,7 +227,7 @@ body {
 /* option bar */
 
 .body-discuss .row .content {
-  background-color: var(--message-content-background-color);
+  background-color: var(--background-message);
 }
 
 .body-discuss .row .content .options-bar {

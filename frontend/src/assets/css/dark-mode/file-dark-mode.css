@@ -262,7 +262,7 @@ body {
 /* option bar */
 
 .body-discuss .row .content {
-  background-color: var(--message-content-background-color);
+  background-color: var(--background-message);
 }
 
 .body-discuss .row .content .options-bar {
@@ -297,9 +297,16 @@ body {
 .body-discuss .row .content .list-file-uploaded {}
 
 .body-discuss .row .content .list-file-uploaded .item-file-uploaded {
-  margin: 40px auto;
+  margin: 10px 60px;
+  padding: 30px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  box-shadow: -2px 2px 3px 0px rgba(0, 0, 0, 0.2);
+}
+
+.body-discuss .row .content .list-file-uploaded .item-file-uploaded:hover {
+  box-shadow: -2px 2px 4px 0px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
 }
 
 .body-discuss .row .content .list-file-uploaded .item-file-uploaded .link-item-file-uploaded {
