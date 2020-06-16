@@ -378,7 +378,7 @@ body {
 
 .body-discuss .comment-section .comments .your-comment .comment-input .form-control {
   border: none;
-  background-color: var(--background-message);
+  background-color: var(--message-content-background-color);
   box-shadow: -3px 3px 5px 0px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s linear;
   color: var(--message-content-color);
@@ -439,7 +439,7 @@ body {
   margin: 10px auto;
   display: flex;
   flex-direction: column;
-  background-color: var(--background-message);
+  background-color: var(--message-content-background-color);
   flex-grow: 1;
   border-radius: 5px;
   padding: 20px;
