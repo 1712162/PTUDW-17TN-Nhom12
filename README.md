@@ -14,5 +14,10 @@ https://docs.google.com/document/d/1ka3mSqvhiV1Hs7ZadNGRPxr8oK1hHzlaDCVk79chFtk/
 Technologies: HTML, CSS, Javascript, Bootstrap, JQuery \
 Demo: https://virtualstudygroup.netlify.app/
 
+### Back end
+Technologies: Nodejs, Expressjs, ejs, passport
+Run: nodemon server 
+Browser: localhost:3000
+
 ### Contact 
 Email : 1712162@student.hcmus.edu.vn
