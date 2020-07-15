@@ -15,7 +15,7 @@ const GroupSchema = new Schema({
     type : Boolean,
     default : false
   },
-  starts : {
+  stars : {
     type : Number,
     default : 0
   },

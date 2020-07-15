@@ -6,7 +6,7 @@
       <h1 class="mt-3"><%=currentUser.username%></h1>
       <p><span><%= currentUser.followers.length %></span> Followers</p>
       <p><i class="fa fa-map-marker"></i> Caifornia, United States</p>
-      <p><i class="fa fa-envelope"></i><%= currentUser.email %></p>
+      <p><i class="fa fa-envelope"></i> <%= currentUser.email %></p>
       <button class="btn btn-warning text-light px-3"
           id="editProfileButt">Edit profile</button>
       <a class="btn btn-info" href="/logout">Log out</a>
