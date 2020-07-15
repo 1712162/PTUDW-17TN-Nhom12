@@ -12,7 +12,7 @@ https://docs.google.com/document/d/1ka3mSqvhiV1Hs7ZadNGRPxr8oK1hHzlaDCVk79chFtk/
 
 ### Front end
 Technologies: HTML, CSS, Javascript, Bootstrap, JQuery \
-Demo: 
+Demo: https://virtualstudygroup.netlify.app/
 
 ### Contact 
 Email : 1712162@student.hcmus.edu.vn

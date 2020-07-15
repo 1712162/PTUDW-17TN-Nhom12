@@ -1,0 +1,185 @@
+@import "./partials/_variables.css";
+@import url('https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap');
+/* body */
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* end body */
+
+.background-login {
+    background-color: var(--main-color);
+    width: 100vw;
+    height: 100vh;
+}
+
+.background-login .container {
+    height: 100%;
+}
+
+.background-login .container .row {
+    height: 100%;
+}
+
+.left {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 770px) {
+    .left {
+        display: none;
+    }
+}
+
+.background-login .left .image {
+    width: 70%;
+}
+
+.background-login .container .row .left p:nth-child(1) {
+    font-family: var(--font-family);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 42px;
+    color: #FFFFFF;
+}
+
+.background-login .container .row .left p:nth-child(2) {
+    font-family: var(--font-family);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 33px;
+    line-height: 42px;
+    color: #1F1F1F;
+}
+
+/* Background */
+
+/* Right */
+
+.background-login .container .row .right {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-login .container .row .right .form-login {
+    width: 340px;
+    height: 580px;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.background-login .container .row .right .form-login .title-logo {
+    font-family: 'Sue Ellen Francisco', cursive;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 64px;
+    line-height: 125px;
+    color: var(--main-color);
+    margin-top: 40px;
+}
+
+.background-login .container .row .right .form-login .description {
+    font-family: var(--font-family);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: rgba(31, 31, 31, 0.5);
+    width: 80%;
+    text-align: center;
+}
+
+.background-login .container .row .right .form-login .infor-login {
+    margin-top: 10px;
+}
+
+.background-login .container .row .right .form-login .infor-login input {
+    background: #F1F1F1;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    margin: 10px;
+    height: 45px;
+    width: 270px;
+}
+
+.background-login .container .row .right .form-login .login {
+    background-color: var(--main-color);
+    width: 270px;
+    height: 40px;
+    margin: 10px;
+    color: #ffffff;
+    font-family: var(--font-family);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.background-login .container .row .right .form-login .login a {
+    color: white;
+    text-decoration: none;
+}
+
+.background-login .container .row .right .form-login .login:hover {
+    background-color: var(--button-hover-color);
+    box-shadow: -2px 2px 3px 0px rgba(0, 0, 0, 0.2);
+}
+
+.background-login .container .row .right .form-login .dots {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 30px auto;
+}
+
+.background-login .container .row .right .form-login .dots .dot {
+    width: 15px;
+    height: 15px;
+    background-color: var(--main-color);
+    margin: auto 10px;
+    border-radius: 50%;
+}
+
+.background-login .container .row .right .form-login .description-ask-have-account {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 21px;
+    color: rgba(31, 31, 31, 0.5);
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+
+.background-login .container .row .right .form-login .sign-up {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFB347;
+    cursor: pointer;
+}
+
+.background-login .container .row .right .form-login .sign-up:hover {
+    color: var(--button-hover-color);
+}
+
+/* end right */

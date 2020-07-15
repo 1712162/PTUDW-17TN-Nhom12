@@ -1,0 +1,87 @@
+ <!DOCTYPE html> 
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>VSG | Sign Up</title>
+        <!-- CSS only -->
+        <link rel="stylesheet"
+        href="/css/vender/bootstrap/bootstrap.min.css">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/signup.css">
+    </head>
+    <body>
+      <div class="background-sign-up">
+          <% if (error && error.length > 0) { %>
+            <div class="alert alert-danger">
+              <div><%= error %></div>
+            </div>
+          <% } %>
+          <% if (success && success.length > 0) { %>
+            <div class="alert alert-success">
+              <div><%= success %></div>
+            </div>
+          <% } %>
+          <div class="container">
+              <div class="form-signup">
+                  <div class="title-logo">
+                      VSG
+                  </div>
+                  <p class="description">Sign up to find your study buddies
+                      and share your passion with the world</p>
+
+                  <form action="/register" method="POST">
+                    <div class="infor-sign-up">
+                      <input 
+                          class="form-control"
+                          type="email"
+                          name="email"
+                          placeholder="Email" />
+                      <input 
+                          class="form-control"
+                          type="text"
+                          name="fullname"
+                          placeholder="Fullname" />
+                      <input 
+                          class="form-control"
+                          type="text"
+                          name="username"
+                          placeholder="Username" />
+                      <input 
+                          class="form-control"
+                          name="password"
+                          placeholder="Password" 
+                          type="password" />
+                    </div>
+                    <button type="submit" class="btn sign-up">Sign up</button> 
+                  </form>
+                  
+                  <p class="description-term-ask">By signing up, you agree to
+                      our <span class="text-emphasize">Terms</span>, <span
+                          class="text-emphasize">Data
+                          Policy</span>
+                      and
+                      <span class="text-emphasize">Cookies
+                          Policy</span></p>
+                  <div class="ask-have-account">Have an account? <a
+                          class="log-in" href="/login">Log in</a></div>
+              </div>
+          </div>
+      </div>
+
+
+      <!-- JS, Popper.js, and jQuery -->
+      <script src="/js/vender/jquery-3.5.1.slim.min.js"></script>
+      <script src="/js/vender/popper.min.js"></script>
+      <script src="/js/vender/bootstrap.min.js"></script>
+      <script src="/js/script.js"></script>
+
+    </body>
+</html>  

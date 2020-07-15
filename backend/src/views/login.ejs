@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>VSG | Login</title>
+        <!-- CSS only -->
+        <link rel="stylesheet"
+        href="/css/vender/bootstrap/bootstrap.min.css">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/login.css">
+    </head>
+    <body>
+        <div class="background-login">
+            <div class="container">
+                <div class="row">
+                    <div class="col-0 col-md-6 col-lg-8 left">
+                        <p class="text-capitalize text-center">virtual study
+                            groups</p>
+                        <p class="text-capitalize text-center">connect with your
+                            study
+                            buddies</p>
+                        <div class="image">
+                            <img src="/assets/img/background-login.svg"
+                                 alt="background-login" 
+                                 class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 right">
+                        <div class="form-login">
+                            <div class="title-logo">
+                                VSG
+                            </div>
+                            <p class="description">Log in to explore hundreds of
+                                amazing groups</p>
+                            <form action="/login" method="POST">
+                              <div class="infor-login">
+                                <input 
+                                    class="form-control"
+                                    type="text"
+                                    name="username"
+                                    placeholder="Username" />
+                                <input 
+                                    class="form-control"
+                                    name="password"
+                                    placeholder="Password" 
+                                    type="password" />
+                              </div>
+                              <button type="submit" class="btn login">Log in</button>
+                            </form>
+                            
+                            <div class="dots">
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                            </div>
+                            <p class="description-ask-have-account">Don't have
+                                an account?</p>
+                            <a class="sign-up" href="/register">Sign up</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- JS, Popper.js, and jQuery -->
+        <script src="/js/vender/jquery-3.5.1.slim.min.js"></script>
+        <script src="/js/vender/popper.min.js"></script>
+        <script src="/js/vender/bootstrap.min.js"></script>
+        <script src="/js/script.js"></script>
+
+    </body>
+</html>
