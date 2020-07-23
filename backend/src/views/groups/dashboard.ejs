@@ -1,26 +1,51 @@
 <%- include("../partials/header") %>
 <main>
-  <div class="mt-5 container">
-      <header>
-          <h1 class="title">YOUR STUDY GROUPS</h1>
-      </header>
-      <div class="input-group">
-          <input class="form-control p-4 py-2 mr-1 rounded-pill pr-5"
-              type="text" placeholder="Embrace your study groups">
-          <span class="input-group-append">
-              <button class="btn rounded-pill border-0 ml-n5"
-                  type="button">
-                  <i class="fa fa-search"></i>
-              </button>
-          </span>
-      </div>
-      <div class="mt-3 d-flex flex-row justify-content-around
-          font-weight-bold filter">
-          <li>Newest</li>
-          <li>Oldest</li>
-          <li>Most stars</li>
-          <li>Alphabet</li>
-      </div>
-  </div>
+    <div class="mt-5 container">
+        <header>
+            <h1 class="title">YOUR STUDY GROUPS</h1>
+        </header>
+        <div class="input-group">
+            <input class="form-control p-4 py-2 mr-1 rounded-pill pr-5"
+                type="text" placeholder="Embrace your study groups">
+            <span class="input-group-append">
+                <button class="btn rounded-pill border-0 ml-n5"
+                    type="button">
+                    <i class="fa fa-search"></i>
+                </button>
+            </span>
+        </div>
+        <div class="mt-3 d-flex flex-row justify-content-around
+            font-weight-bold filter">
+            <li>Newest</li>
+            <li>Oldest</li>
+            <li>Most stars</li>
+            <li>Alphabet</li>
+        </div>
+        <% if (groups.length == 0) { %>
+            <%- include("../partials/empty") %>
+            <% } else { %>
+            <div id="dashboard" class="container-fluid">
+                <div class="groups mt-4">
+                    <div class="row">
+                        <% groups.map(group => {  %>
+                            <div class="mt-3 col-sm-6 col-lg-3">
+                                <div class="card" id="<%= group._id %>">
+                                    <img src="/assets/img/default.jpg"
+                                        class="card-img-top" alt="course-img">
+                                    <div class="card-body">
+                                        <h4 class="card-title"> <%= group.group_name %></h4>
+                                        <p><i class="fa fa-users"></i> <span> <%= group.members.length %></span>
+                                            members</p>
+                                        <p><i clss="fa fa-history"></i> <%= group.created_at.toLocaleDateString('en-CA') %></p>
+                                        <p class="mb-0"><i class="fa fa-star"></i> <%= group.stars %></p>
+                                    </div>
+                                </div>
+                            </div>
+                        <% }) %>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    </div>
 </main>
 <%- include("../partials/footer") %>

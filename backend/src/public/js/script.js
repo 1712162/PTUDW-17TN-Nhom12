@@ -27,21 +27,21 @@ document.getElementById("notify").addEventListener("click", function(e) {
 document.querySelectorAll("#index .card").forEach(function(card){
   card.addEventListener("click", function(e) {
       e.preventDefault();
-      window.location.href = "groupDetailsUserView.html";
+      window.location.href = "explore/" + card.id;
   })
 })
 
 document.querySelectorAll("#dashboard .card").forEach(function(card){
   card.addEventListener("click", function(e) {
       e.preventDefault();
-      window.location.href = "groupDetailsMemberView.html";
+      window.location.href = "dashboard/" + card.id;
   })
 })
 
 document.querySelectorAll("#build .card").forEach(function(card){
   card.addEventListener("click", function(e) {
       e.preventDefault();
-      window.location.href = "groupDetailsAdminView.html";
+      window.location.href = "build/" + card.id;
   })
 })
 

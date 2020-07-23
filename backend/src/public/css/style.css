@@ -217,3 +217,20 @@ footer .fa{
   font-size: 24px;
   color: #d17581;
 }
+
+.center-block {
+  width: 500px;
+  height: 333px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container-fluid {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.nav-link {
+  font-weight: 700;
+}

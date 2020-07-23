@@ -15,6 +15,10 @@ const UserSchema = new Schema({
   followers : [{
       type : mongoose.Types.ObjectId,
       ref : "User"
+  }],
+  groups : [{
+    type : mongoose.Types.ObjectId,
+    ref : "Group"
   }]
 });
 UserSchema.plugin(passwordLocalMongoose);

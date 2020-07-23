@@ -25,34 +25,38 @@
       <li>Alphabet</li>
     </div>
   </div>
-  <div class="container-fluid">
-    <div class="groups-list mb-3">
-      <% groups.map(group => { %>
-        <div class="card my-5">
-          <div class="row no-gutters">
-            <div class="col-md-4 pb-none">
-              <div class="p-3">
-                <img src="/assets/img/default.jpg" class="card-img-top"
-                  alt="...">
-                <button class="btn btn-warning text-light w-100 rounded-0 mt-2
-                  font-weight-bold gotochat"><i class="fa fa-paper-plane
-                    mr-1"></i>Go to group</button>
+  <% if (groups.length == 0) { %>
+    <%- include("../partials/empty") %>
+    <% } else { %>
+      <div class="container-fluid">
+        <div class="groups-list mb-3">
+          <% groups.map(group => { %>
+            <div class="card my-5">
+              <div class="row no-gutters">
+                <div class="col-md-4 pb-none">
+                  <div class="p-3">
+                    <img src="<%= group.cover_image %>" class="card-img-top"
+                      alt="...">
+                    <button class="btn btn-warning text-light w-100 rounded-0 mt-2
+                      font-weight-bold gotochat"><i class="fa fa-paper-plane
+                        mr-1"></i>Go to group</button>
+                  </div>
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h3 class="card-title font-weight-bold text-warning"><%= group.group_name %></h3>
+                    <p class="card-text"><strong>Description</strong> <%= group.description %></p>
+                    <p class="card-text"><strong>Owner</strong></p>
+                    <p class="card-text"><strong>Members</strong> <span><%= group.members.length %></span></p>
+                    <p class="card-text"><strong>Created date</strong> <span><%= group.created_at.toLocaleDateString('en-CA') %></span></p>
+                    <p class="card-text"><strong>Star</strong> <span><%= group.stars %></span></p>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h3 class="card-title font-weight-bold text-warning"><%= group.group_name %></h3>
-                <p class="card-text"><strong>Description</strong> <%= group.description %></p>
-                <p class="card-text"><strong>Owner</strong></p>
-                <p class="card-text"><strong>Members</strong> <span><%= group.members.length %></span></p>
-                <p class="card-text"><strong>Created date</strong> <span><%= group.created_at.toLocaleDateString('en-CA') %></span></p>
-                <p class="card-text"><strong>Star</strong> <span><%= group.stars %></span></p>
-              </div>
-            </div>
-          </div>
+          <% }) %>
         </div>
-      <% }) %>
-    </div>
-  </div>
+      </div>
+    <% } %>
 </main>
 <%- include("../partials/footer") %>
