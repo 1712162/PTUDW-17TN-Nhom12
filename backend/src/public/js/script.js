@@ -1,3 +1,4 @@
+
 $(function(){
   var url = window.location.href; 
   $(".navbar-nav a").each(function() {
@@ -10,47 +11,63 @@ $(function(){
 $(function(){
   var url = window.location.href; 
   $("#icon i").each(function() {
-      if(url == (this.href)) { 
-          $(this).addClass("text-dark");
-      }
+    if(url == (this.href)) { 
+        $(this).addClass("text-dark");
+    }
   });
 });
 
 
-document.getElementById("notify").addEventListener("click", function(e) {
-  e.preventDefault();
-  $(function() {
-      $('[data-toggle="popover"]').popover();
-  })
-})
-
 document.querySelectorAll("#index .card").forEach(function(card){
   card.addEventListener("click", function(e) {
-      e.preventDefault();
-      window.location.href = "explore/" + card.id;
+    e.preventDefault();
+    window.location.href = "explore/" + card.id;
   })
 })
 
 document.querySelectorAll("#dashboard .card").forEach(function(card){
   card.addEventListener("click", function(e) {
-      e.preventDefault();
-      window.location.href = "dashboard/" + card.id;
+    e.preventDefault();
+    window.location.href = "dashboard/" + card.id;
   })
 })
 
 document.querySelectorAll("#build .card").forEach(function(card){
   card.addEventListener("click", function(e) {
-      e.preventDefault();
-      window.location.href = "build/" + card.id;
+    e.preventDefault();
+    window.location.href = "build/" + card.id;
   })
 })
 
+const settings = document.querySelector(".settings");
+if (settings) {
+  settings.addEventListener("click", function(e) {
+    e.preventDefault();
+    window.location.href = window.location.origin + `/groups/${settings.id}/edit`;
+  })
+}
 
-const settings = document.getElementById("settings");
-if (settings) settings.addEventListener("click", function(e) {
-  e.preventDefault();
-  window.location.href = "settings.html";
-})
+
+const searchGroup = document.querySelector(".search-group");
+if (searchGroup) {
+  searchGroup.addEventListener("input", function(e) {
+    e.preventDefault();
+    const params = new URLSearchParams({
+      search : e.target.value
+    });
+    window.location.href = window.location.href + "?" + params.toString();
+  })
+}
+
+const notify = document.getElementById("notify");
+if (notify) { 
+  notify.addEventListener("click", function(e) {
+    e.preventDefault();
+    $(function() {
+      $('[data-toggle="popover"]').popover();
+    })
+  })
+}
 
 const createButt = document.getElementById("createButt");
 if (createButt) createButt.addEventListener("click", function(e) {

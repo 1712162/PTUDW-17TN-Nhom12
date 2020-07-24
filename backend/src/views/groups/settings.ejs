@@ -1,0 +1,148 @@
+<%- include("../partials/header") %>
+<main class="container-fluid">
+  <div class="row">
+      <div class="col-md-3 p-3" style="min-width: 50px;">
+          <div class="card">
+              <div class="card-body">
+                  <h5 class="card-title">Settings</h5>
+                  <p class="card-text">Details</p>
+                  <p class="card-text">Invite people</p>
+                  <p class="card-text">Members</p>
+                  <p class="card-text">Important</p>
+              </div>
+          </div>
+      </div>
+      <div class="col-md-9 p-3">
+          <div class="card">
+              <div class="card-body">
+                  <h5 class="card-title">Details</h5>
+                  <form>
+                      <div class="form-group">
+                          <label for="input-title">Title</label>
+                          <input type="text" class="form-control
+                              bg-light" id="input-title"
+                              value="Statistics 101">
+                      </div>
+                      <div class="form-group">
+                          <label for="input-description">Description</label>
+                          <textarea class="form-control bg-light"
+                              id="input-description"
+                              placeholder="lorem ipsum"></textarea>
+                      </div>
+                      <div class="form-group">
+                          <label for="input-file">Cover photo</label>
+                          <input type="file" class="form-control-file"
+                              id="input-file">
+                      </div>
+                      <button type="submit" class="btn btn-warning
+                          text-light float-right">Save</button>
+                  </form>
+              </div>
+          </div>
+          <div class="card mt-5">
+              <div class="card-body">
+                  <h5 class="card-title">Invite people</h5>
+                  <form class="align-items-center">
+                      <div class="form-group">
+                          <div class="input-group">
+                              <input class="bg-light form-control py-2
+                                  rounded-pill mr-1 pr-5" type="text"
+                                  placeholder="Search people...">
+                              <span class="input-group-append">
+                                  <button class="btn rounded-pill
+                                      border-0 ml-n5" type="button">
+                                      <i class="text-muted fa
+                                          fa-search"></i>
+                                  </button>
+                              </span>
+                              <button type="submit" class="ml-3 btn
+                                  btn-warning text-light float-right">Invite</button>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+          </div>
+          <div class="card mt-5">
+              <div class="card-body">
+                  <h5 class="card-title">Member</h5>
+                  <form class="align-items-center">
+                      <div class="form-group">
+                          <div class="input-group">
+                              <input class="bg-light form-control py-2
+                                  rounded-pill mr-1 pr-5" type="text"
+                                  placeholder="Search member...">
+                              <span class="input-group-append">
+                                  <button class="btn rounded-pill
+                                      border-0 ml-n5" type="button">
+                                      <i class="text-muted fa
+                                          fa-search"></i>
+                                  </button>
+                              </span>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+          </div>
+          <div class="card mt-5 border-danger">
+              <div class="card-body">
+                  <h5 class="card-title">Important</h5>
+                  <form class="px-2">
+                      <div class="form-group bg-light row
+                          align-items-center py-3">
+                          <div class="col">
+                              <h6>Manage access</h6>
+                              <p class="mb-0">Only members in group
+                                  can view when it goes private</p>
+                          </div>
+                          <div class="col">
+                              <button type="submit" class="ml-3 btn
+                                  btn-danger text-light float-right">Go
+                                  <span>private</span></button>
+                          </div>
+                      </div>
+                      <div class="form-group bg-light row
+                          align-items-center py-3">
+                          <div class="col">
+                              <h6>Share authorization</h6>
+                              <div class="input-group">
+                                  <input class="form-control py-2
+                                      rounded-pill mr-1 pr-5"
+                                      type="text" placeholder="Search
+                                      people...">
+                                  <span class="input-group-append">
+                                      <button class="btn rounded-pill
+                                          border-0 ml-n5"
+                                          type="button">
+                                          <i class="text-muted fa
+                                              fa-search"></i>
+                                      </button>
+                                  </span>
+                              </div>
+                          </div>
+                          <div class="col">
+                              <button type="submit" class="ml-3 btn
+                                  btn-danger text-light float-right">Share</button>
+                          </div>
+                      </div>
+                      <div class="form-group bg-light row
+                          align-items-center py-3">
+                          <div class="col">
+                              <h6>Delete this study group</h6>
+                              <p class="mb-0">Your and everyone wiill
+                                  never see this group again. Are you
+                                  sure?</p>
+                          </div>
+                          <div class="col">
+                              <button type="submit" class="ml-3 btn
+                                  btn-danger text-light float-right">Delete
+                                  this group</button>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</main>
+
+<%- include("../partials/footer") %>

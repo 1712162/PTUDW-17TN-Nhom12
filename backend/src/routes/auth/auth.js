@@ -13,7 +13,6 @@ router.get('/login', function(req, res) {
 });
 
 router.post('/register', function(req, res) {
-  console.log(req.body.username);
   let newUser = new User({ 
     username : req.body.username, 
     fullname : req.body.fullname,

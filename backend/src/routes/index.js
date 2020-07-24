@@ -13,7 +13,6 @@ const init = () => {
   const middleware = require('../middleware');
 
   app.use(bodyParser.json());
-  app.use(express.static('public'));
   app.use(bodyParser.urlencoded({ extended: true }));
   app.set('view engine', 'ejs');
   app.use(require('express-session')({
@@ -40,7 +39,7 @@ const init = () => {
 
   app.use(authRoutes);
   app.use('/groups', middleware.isLoggedIn, groupsRoutes);
-
+  app.use(express.static('public'));
   app.listen(3000, function () {
     console.log('Listening to port 3000');
 });

@@ -14,6 +14,7 @@ router.get('/explore/:id', function(req, res) {
 });
 
 router.get('/explore', function(req, res) {
+  console.log(req.query.search);
   Group.find({"view_mode" : true}, function(err, groups) {
     if (err) {
       console.log(err);
