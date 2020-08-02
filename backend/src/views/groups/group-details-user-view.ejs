@@ -1,48 +1,62 @@
 <%- include('../partials/header') %>
 <main>
   <div class="container-fluid">
-      <div class="card">
-        <div class="row no-gutters">
-          <div class="col-md-4 pb-none">
+    <div class="card">
+      <div class="row no-gutters">
+        <div class="col-md-4 pb-none">
+          <form action="/groups/explore/enroll" method="POST">
             <div class="p-3">
-                <img src="<%= group.cover_image %>" class="card-img-top" alt="...">
-                <a class="btn btn-warning text-light w-100 rounded-0 mt-2 enroll-butt" id="<%= group._id %>">
-                  <i class="fa fa-arrow-circle-right mr-1"></i>Enroll
-                </a>
+              <img src="<%= group.cover_image %>" class="card-img-top" alt="...">
+              <input type="text" name="group_id_enroll" value="<%= group._id %>" style="display: none;">
+              <% if (group.alreadyenroll) { %>
+              <button disabled style="background-color: rgb(105, 105, 105); border-color: rgb(105, 105, 105);"
+                type="submit" class="btn btn-warning text-light w-100 rounded-0 mt-2 enroll-butt" id="<%= group._id %>">
+                <i class="fa fa-arrow-circle-right mr-1"></i>Enroll
+              </button>
+              <% } else { %>
+              <button type="submit" class="btn btn-warning text-light w-100 rounded-0 mt-2 enroll-butt"
+                id="<%= group._id %>">
+                <i class="fa fa-arrow-circle-right mr-1"></i>Enroll
+              </button>
+              <% } %>
             </div>
+          </form>
         </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title font-weight-bold text-warning">  <%= group.group_name %></h5>
-              <p class="card-text"><strong>Description</strong>  <%= group.description %></p>
-              <p class="card-text"><strong>Owner</strong></p>
-              <p class="card-text"><strong>Members</strong> <span> <%= group.members.length %></span></p>
-              <p class="card-text"><strong>Created date</strong><span> <%= group.created_at.toLocaleDateString('en-CA') %></span></p>
-              <p class="card-text"><strong>Star</strong> <span> <% group.stars %></span></p>
-            </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title font-weight-bold text-warning"> <%= group.group_name %></h5>
+            <p class="card-text"><strong>Description</strong> <%= group.description %></p>
+            <p class="card-text"><strong>Owner</strong></p>
+            <p class="card-text"><strong>Members</strong> <span> <%= group.members.length %></span></p>
+            <p class="card-text"><strong>Created date</strong><span>
+                <%= group.created_at.toLocaleDateString('en-CA') %></span></p>
+            <p class="card-text"><strong>Star</strong> <span> <% group.stars %></span></p>
           </div>
+        </div>
       </div>
       <div class="mt-5">
-          <h3 class="mb-2 text-center text-md-left"><i class="fa fa-comments" style="font-size: 2rem;"></i> Comments (<%= group.comments.length %>)</h3>
-          <div class="container-fluid">
-              <div class="row flex-column flex-sm-row border-top border-bottom py-2 align-items-center align-items-sm-left">
-                  <% group.comments.map(comment => { %>
-                    <div class="col-3">
-                        <img src="<%= comment.author_image %>" class=" avatar rounded-circle">
-                        <p class="m-2 font-weight-bold"><%= comment.author_name %></p>
-                    </div>
-                    <div class="col-9">
-                        <p class="card-subtitle mb-2"><small class="text-muted"><%= group.created_at.toLocaleDateString('en-CA') %></small></p>
-                        <p><%= comment.content %></p>
-                    </div>
-                  <% }) %>
-              </div>
+        <h3 class="mb-2 text-center text-md-left"><i class="fa fa-comments" style="font-size: 2rem;"></i> Comments
+          (<%= group.comments.length %>)</h3>
+        <div class="container-fluid">
+          <div class="row flex-column flex-sm-row border-top border-bottom py-2 align-items-center align-items-sm-left">
+            <% group.comments.map(comment => { %>
+            <div class="col-3">
+              <img src="<%= comment.author_image %>" class=" avatar rounded-circle">
+              <p class="m-2 font-weight-bold"><%= comment.author_name %></p>
+            </div>
+            <div class="col-9">
+              <p class="card-subtitle mb-2"><small
+                  class="text-muted"><%= group.created_at.toLocaleDateString('en-CA') %></small></p>
+              <p><%= comment.content %></p>
+            </div>
+            <% }) %>
           </div>
-          <div class="text-center mt-4 mb-5">
-              <a class="text-warning font-weight-bold" style="font-size: 1.5rem;">SEE MORE COMMENTS</a>
-          </div>
-          </div>
+        </div>
+        <div class="text-center mt-4 mb-5">
+          <a class="text-warning font-weight-bold" style="font-size: 1.5rem;">SEE MORE COMMENTS</a>
+        </div>
       </div>
+    </div>
   </div>
 </main>
 <%- include('../partials/footer') %>

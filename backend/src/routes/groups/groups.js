@@ -1,10 +1,10 @@
-const express         =     require('express');
-const buildRoute      =     require('../groups/build');
-const exploreRoute    =     require('../groups/explore');
-const dashboardRoute  =     require('../groups/dashboard'); 
-const discussRoute    =     require('../groups/discuss');
-const groupRoute      =     require('../groups/group'); 
-const router  = express.Router();
+const express = require('express');
+const buildRoute = require('./build');
+const exploreRoute = require('./explore');
+const dashboardRoute = require('./dashboard');
+const discussRoute = require('./discuss');
+const groupRoute = require('./group');
+const router = express.Router();
 
 router.use(buildRoute);
 router.use(exploreRoute);

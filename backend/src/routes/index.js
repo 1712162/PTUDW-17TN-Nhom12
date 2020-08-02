@@ -42,8 +42,7 @@ const init = () => {
   app.use(express.static('public'));
   app.listen(3000, function () {
     console.log('Listening to port 3000');
-});
-
+  });
 };
 
 module.exports = {
