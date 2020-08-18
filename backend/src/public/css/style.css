@@ -1,22 +1,23 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
 }
 body {
-  font-family: 'Raleway', sans-serif;
-  background-color: #FAFAFA;
+  font-family: "Raleway", sans-serif;
+  background-color: #fafafa;
 }
 
-@media(min-width: 992px) {
+@media (min-width: 992px) {
   .navbar-expand-lg .navbar-nav .nav-link {
-      padding-left: 2rem;
-      padding-right: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 
 .navbar-light {
-  background-color: #FFB347;
+  background-color: #ffb347;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -35,7 +36,9 @@ body {
   color: rgba(0, 0, 0, 0.5);
 }
 
-.input-group>.custom-file .custom-file-input:focus~.custom-file-label, .input-group>.custom-select:focus, .input-group>.form-control:focus{
+.input-group > .custom-file .custom-file-input:focus ~ .custom-file-label,
+.input-group > .custom-select:focus,
+.input-group > .form-control:focus {
   z-index: 0;
 }
 
@@ -44,16 +47,15 @@ body {
 }
 
 .navbar .form-control {
- height:  calc(1.5em + .5rem );
+  height: calc(1.5em + 0.5rem);
 }
 
 .navbar .form-control:focus {
- box-shadow: none;
+  box-shadow: none;
 }
 
-
 .navbar .navbar-brand {
-  font-family: 'Sue Ellen Francisco', cursive;
+  font-family: "Sue Ellen Francisco", cursive;
   color: #fff;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   font-size: 30px;
@@ -72,12 +74,12 @@ body {
 
 footer {
   color: #fff;
-  background-color: #1F1F1F;
+  background-color: #1f1f1f;
   padding-bottom: 5px;
 }
 
 #email {
-  color: #1FFFFF;
+  color: #1fffff;
 }
 
 a {
@@ -87,7 +89,7 @@ a {
 
 a:hover {
   text-decoration: none;
-  color:#FFB347;
+  color: #ffb347;
 }
 
 li {
@@ -95,23 +97,23 @@ li {
 }
 
 footer h5 {
-  color: #FFB347;
+  color: #ffb347;
 }
 
 #logo {
-  font-family: 'Sue Ellen Francisco', cursive;
+  font-family: "Sue Ellen Francisco", cursive;
   font-size: 4rem;
 }
 
-footer .fa{
+footer .fa {
   font-size: 2rem;
   padding: 0px 20px;
-  color: #D3D3D3;
+  color: #d3d3d3;
 }
 
 .trademark {
-  font-size: .75rem;
-  color: #D3D3D3;
+  font-size: 0.75rem;
+  color: #d3d3d3;
 }
 
 .banner {
@@ -127,7 +129,7 @@ footer .fa{
   filter: brightness(50%);
 }
 .banner-text {
-  font-family: 'Sue Ellen Francisco', cursive;
+  font-family: "Sue Ellen Francisco", cursive;
   font-size: 2rem;
   color: white;
   position: absolute;
@@ -136,21 +138,21 @@ footer .fa{
   transform: translate(-50%, -50%);
 }
 .banner-text h1 {
-  color: #FFB347;
+  color: #ffb347;
   font-size: 4rem;
 }
 
-@media(max-width: 720px) {
+@media (max-width: 720px) {
   .banner-text {
-      font-size: 1.5rem;
+    font-size: 1.5rem;
   }
   .banner-text h1 {
-      font-size: 2.5rem;
+    font-size: 2.5rem;
   }
 }
 
 .filter li:hover {
-  color: #FFB347;
+  color: #ffb347;
 }
 .card-img-top {
   width: 100%;
@@ -166,16 +168,17 @@ footer .fa{
 .page-link {
   color: #000;
 }
-.page-link:hover, .page-item.active .page-link{
+.page-link:hover,
+.page-item.active .page-link {
   color: #fff;
-  background-color: #FFB347;
+  background-color: #ffb347;
   border: none;
 }
 .page-link {
   border: none;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   border-left: 1px solid #000;
-  padding: .15rem 0.75rem;
+  padding: 0.15rem 0.75rem;
 }
 
 .page-link:focus {
@@ -187,7 +190,7 @@ footer .fa{
 }
 
 .page-item.disabled .page-link {
-  background-color: #FAFAFA;
+  background-color: #fafafa;
 }
 
 .profile-image {
@@ -200,7 +203,7 @@ footer .fa{
   font-size: 100px;
 }
 .title {
-  font-family: 'Sue Ellen Francisco', cursive;
+  font-family: "Sue Ellen Francisco", cursive;
   font-size: 3.5rem;
   text-align: center;
 }
@@ -211,8 +214,7 @@ footer .fa{
   object-fit: cover;
 }
 
-.stars
-{
+.stars {
   margin: 20px 0;
   font-size: 24px;
   color: #d17581;
@@ -233,4 +235,8 @@ footer .fa{
 
 .nav-link {
   font-weight: 700;
+}
+
+.button-group {
+  display: flex;
 }

@@ -1,85 +1,91 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>VSG- Virtual Study Group, Connect with your study buddies</title>
-        <link rel="stylesheet"
-            href="/css/vender/bootstrap/bootstrap.min.css">
-        <link
-            href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap"
-            rel="stylesheet">
-        <link
-            href="https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap"
-            rel="stylesheet">
-        <link rel="stylesheet"
-            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/css/style.css">
-    </head>
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/groups/explore">VSG</a>
-                <button class="navbar-toggler" type="button"
-                    data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+  <head>
+    <title>VSG- Virtual Study Group, Connect with your study buddies</title>
+    <link rel="stylesheet" href="/css/vender/bootstrap/bootstrap.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/groups/explore">VSG</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/groups/explore"
+                >Explore<span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/groups/dashboard">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/groups/build">Build</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/groups/discuss">Dicuss</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <ul class="navbar-nav" id="#icon">
+              <li>
+                <button
+                  class="btn my-2 my-sm-0"
+                  id="notify"
+                  data-container="body"
+                  data-toggle="popover"
+                  data-placement="bottom"
+                  data-content="You receive a
+                            message"
+                >
+                  <i class="fa fa-bell lg"></i>
                 </button>
-                <div class="collapse navbar-collapse"
-                    id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/groups/explore">Explore<span
-                                    class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/groups/dashboard">Dashboard</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/groups/build">Build</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/groups/discuss">Dicuss</a>
-                        </li>
-                    </ul>
-                    <form class="form-inline my-2 my-lg-0">
-                      <ul class="navbar-nav" id="#icon">
-                        <li>
-                          <div class="input-group">
-                            <input class="form-control py-2 rounded-pill mr-1
-                                pr-5" type="text">
-                            <span class="input-group-append">
-                                <button class="btn rounded-pill border-0 ml-n5"
-                                    type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
-                          </div>
-                        </li>
-                        <li>
-                          <button class="btn my-2 my-sm-0" id="notify"
-                            data-container="body" data-toggle="popover"
-                            data-placement="bottom" data-content="You receive a
-                            message"><i class="fa fa-bell lg"></i>
-                          </button>
-                        </li> 
-                        <li>
-                          <a class="btn  my-2 my-sm-0 active" href="/profile/<%= currentUser._id %>"><i class="fa fa-user-circle"></i></a>
-                        </li>
-                      </ul>
-                        
-                    </form>
-                </div>
-            </div>
-        </nav>
-        <div class="text-center">
-          <% if (error && error.length > 0) { %>
-            <div class="alert alert-danger">
-              <div><%= error %></div>
-            </div>
-          <% } %>
-          <% if (success && success.length > 0) { %>
-            <div class="alert alert-success">
-              <div><%= success %></div>
-            </div>
-          <% } %>
+              </li>
+              <li>
+                <a
+                  class="btn my-2 my-sm-0 active"
+                  href="/profile/<%= currentUser._id %>"
+                  ><i class="fa fa-user-circle"></i
+                ></a>
+              </li>
+            </ul>
+          </form>
         </div>
+      </div>
+    </nav>
+    <div class="text-center">
+      <% if (error && error.length > 0) { %>
+      <div class="alert alert-danger">
+        <div><%= error %></div>
+      </div>
+      <% } %> <% if (success && success.length > 0) { %>
+      <div class="alert alert-success">
+        <div><%= success %></div>
+      </div>
+      <% } %>
+    </div>
+  </body>
+</html>

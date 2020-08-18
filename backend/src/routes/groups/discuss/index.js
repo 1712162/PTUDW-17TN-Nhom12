@@ -1,17 +1,17 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const User = require('../../../models/user');
-const user = require('../../../models/user');
-router.get('/discuss', function (req, res) {
+const User = require("../../../models/user");
+const user = require("../../../models/user");
+router.get("/discuss", function (req, res) {
+  const searchKey = req.query.group || "";
   User.findById(req.user._id)
     .populate("groups.myjoingroup.group")
     .populate("groups.myowngroup.group")
     .exec(function (err, user) {
       if (err) {
         console.log(err);
-        res.render('groups/discuss', { 'groups': [] });
-      }
-      else {
+        res.render("groups/discuss", { groups: [] });
+      } else {
         const newGroups = [];
 
         user.groups.myowngroup.forEach((group) => {
@@ -19,8 +19,7 @@ router.get('/discuss', function (req, res) {
             ...group.group._doc,
             cover_image: `data:${group.group.cover_image.mimetype};base64,${group.group.cover_image.data}`,
           };
-          if (newGroup.status === true)
-            newGroups.push(newGroup);
+          if (newGroup.status === true) newGroups.push(newGroup);
         });
 
         user.groups.myjoingroup.forEach((group) => {
@@ -28,12 +27,14 @@ router.get('/discuss', function (req, res) {
             ...group.group._doc,
             cover_image: `data:${group.group.cover_image.mimetype};base64,${group.group.cover_image.data}`,
           };
-          if (newGroup.status === true)
-            newGroups.push(newGroup);
-        })
-        res.render('groups/discuss', { 'groups': newGroups });
+          if (newGroup.status === true) newGroups.push(newGroup);
+        });
+        let filteredGroups = newGroups.filter((group) =>
+          group.group_name.includes(searchKey)
+        );
+        res.render("groups/discuss", { groups: filteredGroups });
       }
-    })
+    });
 });
 
 module.exports = router;

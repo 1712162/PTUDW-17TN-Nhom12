@@ -5,7 +5,7 @@
       <div class="row no-gutters">
         <div class="col-md-4 pb-none">
           <div class="p-3">
-            <img src="<%= group.cover_image %>" class="card-img-top" alt="...">
+            <img src="data:<%= group.cover_image.mimetype %>;base64,<%= group.cover_image.data %>" class="card-img-top" alt="...">
             <div class="btn-group w-100">
               <button class="btn btn-warning text-light
                               rounded-0 mt-2 mr-2 gotochat"><i class="fa fa-paper-plane mr-1"></i>Go
@@ -36,14 +36,16 @@
         <i class="fa fa-arrow-circle-right" style="font-size: 2rem;"></i>
         Requests ( <%= group.waiting_list.length %> )
       </h3>
-      <div class="overflow-auto border" style="max-height: 500px;">
-        <% group.waiting_list.map(user => {  %>
-        <div class="border p-2">
-          <img src="<%= user.userenroll.profile_image %>" class=" avatar rounded-circle">
-          <h6 class="font-weight-bold mx-3 mb-3"><%= user.userenroll.username %></h6>
+      <div class="overflow-auto" style="max-height: 500px;">
+        <% group.waiting_list.map(waiter => {  %>
+        <div class="p-2 d-flex align-items-center">
           <div>
+            <img src="<%= waiter.userenroll.profile_image %>" class= avatar rounded-circle">
+            <h6 class="font-weight-bold mx-3 mb-3"><%= waiter.userenroll.username %></h6>
+          </div>
+          <div class="d-flex">
             <form action="/groups/build/accept" method="POST">
-              <input style="display: none;" type="text" name="userid" value="<%= user.userenroll._id %>" />
+              <input style="display: none;" type="text" name="userid" value="<%= waiter.userenroll._id %>" />
               <input style="display: none;" type="text" name="groupid" value="<%= group._id %>" />
               <button type="submit" class="btn btn-success rounded-0 btn-sm">
                 <i class="fa fa-check"></i>
@@ -51,9 +53,9 @@
               </button>
             </form>
             <form action="/groups/build/reject" method="POST">
-              <input style="display: none;" type="text" name="userid" value="<%= user.userenroll._id %>" />
+              <input style="display: none;" type="text" name="userid" value="<%= waiter.userenroll._id %>" />
               <input style="display: none;" type="text" name="groupid" value="<%= group._id %>" />
-              <button type="submit" class="btn btn-danger rounded-0 btn-sm">
+              <button type="submit" class="ml-2 btn btn-danger rounded-0 btn-sm">
                 <i class="fa fa-times"></i>
                 Reject
               </button>
