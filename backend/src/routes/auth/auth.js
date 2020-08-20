@@ -1,7 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const passport = require("passport");
+const multer = require("multer");
 const User = require("../../models/user");
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
 
 router.post(
   "/login",
@@ -36,9 +39,38 @@ router.post("/register", function (req, res) {
 router.get("/register", function (req, res) {
   res.render("register");
 });
+router.post("/profile/:id", upload.single("picture"), function (req, res) {
+  const user = req.body.user;
+  var encode_image = "";
+  if (req.file) {
+    const image = req.file.buffer;
+    encode_image = image.toString("base64");
+  }
+  if (encode_image !== "") {
+    user.profile_image = { 
+        data : encode_image,
+        mimetype :req.file.mimetype
+    }
+  }
+  User.findByIdAndUpdate(req.params.id, user, (error, updatedUser) => {
+    if (error) {
+      console.log(error);
+    }
+    else {
+      res.redirect("/profile/" + req.params.id)
+    }
+  } )
+});
 
 router.get("/profile/:id", function (req, res) {
-  res.render("profile");
+  User.findById(req.params.id, (error, user)=>{
+    if (error) {
+      console.log(error);
+    }
+    else {
+      res.render("profile", {user : user});
+    }
+  })
 });
 
 router.get("/logout", function (req, res) {

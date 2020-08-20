@@ -11,7 +11,7 @@ $(function () {
   var url = window.location.href;
   $("#icon i").each(function () {
     if (url == this.href) {
-      $(this).addClass("text-dark");
+      $(this).closest("i").addClass("text-dark");
     }
   });
 });
@@ -118,6 +118,6 @@ const groups = document.querySelectorAll(".gotochat");
 if (groups)
   groups.forEach(function (group) {
     group.addEventListener("click", function (e) {
-      window.location.href = "../chat/dark-mode/dark-mode.html";
+      window.location.href = window.location.origin + `/chat/${group.id}`;
     });
   });

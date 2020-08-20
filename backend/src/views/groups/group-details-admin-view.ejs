@@ -8,7 +8,7 @@
             <img src="data:<%= group.cover_image.mimetype %>;base64,<%= group.cover_image.data %>" class="card-img-top" alt="...">
             <div class="btn-group w-100">
               <button class="btn btn-warning text-light
-                              rounded-0 mt-2 mr-2 gotochat"><i class="fa fa-paper-plane mr-1"></i>Go
+                              rounded-0 mt-2 mr-2 gotochat" id="<%= group._id %>" ><i class="fa fa-paper-plane mr-1"></i>Go
                 to group</button>
               <button class="btn btn-info rounded-0 mt-2 settings" id="<%= group._id %>">
                 <i class="fa fa-cog mr-1"></i>
@@ -34,32 +34,35 @@
     <div class="my-5">
       <h3 class="text-center text-md-left">
         <i class="fa fa-arrow-circle-right" style="font-size: 2rem;"></i>
-        Requests ( <%= group.waiting_list.length %> )
+        Requests (<%= group.waiting_list.length %>)
       </h3>
       <div class="overflow-auto" style="max-height: 500px;">
         <% group.waiting_list.map(waiter => {  %>
-        <div class="p-2 d-flex align-items-center">
+        <div class="pt-2 d-flex align-items-center">
           <div>
-            <img src="<%= waiter.userenroll.profile_image %>" class= avatar rounded-circle">
-            <h6 class="font-weight-bold mx-3 mb-3"><%= waiter.userenroll.username %></h6>
+            <img src="data:<%= waiter.userenroll.profile_image.mimetype %>;base64,<%= waiter.userenroll.profile_image.data %>" class= "avatar rounded-circle">
           </div>
-          <div class="d-flex">
-            <form action="/groups/build/accept" method="POST">
-              <input style="display: none;" type="text" name="userid" value="<%= waiter.userenroll._id %>" />
-              <input style="display: none;" type="text" name="groupid" value="<%= group._id %>" />
-              <button type="submit" class="btn btn-success rounded-0 btn-sm">
-                <i class="fa fa-check"></i>
-                Accept
-              </button>
-            </form>
-            <form action="/groups/build/reject" method="POST">
-              <input style="display: none;" type="text" name="userid" value="<%= waiter.userenroll._id %>" />
-              <input style="display: none;" type="text" name="groupid" value="<%= group._id %>" />
-              <button type="submit" class="ml-2 btn btn-danger rounded-0 btn-sm">
-                <i class="fa fa-times"></i>
-                Reject
-              </button>
-            </form>
+          <div class="ml-3">
+            <h6 class="font-weight-bold mx-3 mb-3"><%= waiter.userenroll.username %></h6>
+            <div class="d-flex"> 
+             <form action="/groups/build/accept" method="POST">
+                <input style="display: none;" type="text" name="userid" value="<%= waiter.userenroll._id %>" />
+                <input style="display: none;" type="text" name="groupid" value="<%= group._id %>" />
+                <button type="submit" class="btn btn-success rounded-0 btn-sm">
+                  <i class="fa fa-check"></i>
+                  Accept
+                </button>
+              </form>
+              <form action="/groups/build/reject" method="POST">
+                <input style="display: none;" type="text" name="userid" value="<%= waiter.userenroll._id %>" />
+                <input style="display: none;" type="text" name="groupid" value="<%= group._id %>" />
+                <button type="submit" class="ml-2 btn btn-danger rounded-0 btn-sm">
+                  <i class="fa fa-times"></i>
+                  Reject
+                </button>
+              </form>
+            </div>
+          
           </div>
         </div>
         <% }) %>
