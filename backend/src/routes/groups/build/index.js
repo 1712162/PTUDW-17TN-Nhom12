@@ -2,6 +2,9 @@ const express = require("express");
 const router = express.Router();
 const Group = require("../../../models/group");
 const User = require("../../../models/user");
+const multer = require("multer");
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
 
 router.get("/build/:id", function (req, res) {
   Group.findById(req.params.id)
@@ -33,25 +36,37 @@ router.get("/build", function (req, res) {
     });
 });
 
-router.post("/build", function (req, res) {
+router.post("/build", upload.single("picture"), (req, res) => {
   let group = req.body.group;
-  group["view_mode"] = "on" ? true : false;
+  var encode_image = "";
+  if (req.file) {
+    const image = req.file.buffer;
+    encode_image = image.toString("base64");
+  }
+  if (encode_image) {
+    group.cover_image = {
+      data: encode_image,
+      mimetype: req.file.mimetype
+    }
+  }
+  group["view_mode"] = "on" ? 0 : 1;
   group["max_number"] = Number(group["max_number"]);
-  console.log(req.user);
   group["owners"] = [];
   group["owners"].push(req.user._id);
-  if (group["cover_image"] == "") delete group["cover_image"];
   Group.create(group, function (err, newGroup) {
     if (err) {
       req.flash("error", err.message);
       return res.redirect("/groups/build");
     } else {
-      const groups = [...req.user.groups];
-      groups.push(newGroup._id);
+      const groups = {
+        myowngroup: [...req.user.groups.myowngroup], 
+        myjoingroup: [...req.user.groups.myjoingroup],
+        myenrollrequestgroup: [...req.user.groups.myenrollrequestgroup]
+      };
+      groups.myowngroup.push({group : newGroup._id});
       User.findByIdAndUpdate(req.user._id, { groups }, function (err, user) {
         if (err) {
           req.flash("error", err.message);
-          console.log(req.flash("error"));
           return res.redirect("/groups/build");
         } else {
           req.flash("success", "New group has been created!");

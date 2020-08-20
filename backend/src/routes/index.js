@@ -11,9 +11,8 @@ const init = () => {
   const LocalStratetry = require('passport-local');
   const User = require('../models/user');
   const middleware = require('../middleware');
-
-  app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: true }));
+  app.use(bodyParser.json());
   app.set('view engine', 'ejs');
   app.use(require('express-session')({
     secret: 'Huynh Quoc Dung :v',
@@ -35,7 +34,6 @@ const init = () => {
     res.locals.success = req.flash('success');
     next();
   });
-
 
   app.use(authRoutes);
   app.use('/groups', middleware.isLoggedIn, groupsRoutes);

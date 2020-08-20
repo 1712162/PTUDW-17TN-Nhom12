@@ -50,6 +50,7 @@ router.get("/explore", function (req, res) {
           cover_image: `data:${group.cover_image.mimetype};base64,${group.cover_image.data}`,
           group_name: group.group_name,
           members: group.members,
+          owners: group.owners,
           created_at: group.created_at,
           stars: group.stars,
         };
@@ -57,6 +58,10 @@ router.get("/explore", function (req, res) {
 
         newGroup.members.forEach((memberId) => {
           if (memberId.toString() == req.user._id.toString()) check = true;
+        });
+
+       newGroup.owners.forEach((ownerId) => {
+          if (ownerId.toString() == req.user._id.toString()) check = true;
         });
 
         if (!newGroup.group_name.includes(searchKey)) check = true;
