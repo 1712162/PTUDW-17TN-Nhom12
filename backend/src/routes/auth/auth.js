@@ -5,18 +5,24 @@ const multer = require("multer");
 const User = require("../../models/user");
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
-
+const middleware = require("../../middleware")
 router.post(
   "/login",
   passport.authenticate("local", {
     successRedirect: "/groups/explore",
     failureRedirect: "/login",
+    failureMessage: "Invalid username or password" 
   }),
-  function (req, res) {}
+  function (req, res) {
+  }
 );
 
 router.get("/login", function (req, res) {
-  res.render("login");
+  const errors = req.session.messages || [];
+  req.session.messages = [];
+  let error = null;
+  if (errors.length != 0) error = errors[0];
+  res.render("login", {error});
 });
 
 router.post("/register", function (req, res) {
@@ -54,15 +60,17 @@ router.post("/profile/:id", upload.single("picture"), function (req, res) {
   }
   User.findByIdAndUpdate(req.params.id, user, (error, updatedUser) => {
     if (error) {
-      console.log(error);
+      req.flash("error", error.message);
+      res.redirect("/profile/" + req.params.id)
     }
     else {
+      req.flash("success", "Update file successfully");
       res.redirect("/profile/" + req.params.id)
     }
   } )
 });
 
-router.get("/profile/:id", function (req, res) {
+router.get("/profile/:id", middleware.isLoggedIn, function (req, res) {
   User.findById(req.params.id, (error, user)=>{
     if (error) {
       console.log(error);

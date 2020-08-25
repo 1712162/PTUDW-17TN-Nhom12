@@ -1,6 +1,6 @@
 <%- include("../partials/header") %>
 <main>
-  <div class="container-fluid">
+  <div class="container">
     <div class="card">
       <div class="row no-gutters">
         <div class="col-md-4 pb-none">
@@ -82,12 +82,11 @@
           </div>
         </div>
       </div>
-    </div>
     <div class="mt-5">
-      <h3 class="mb-2 text-center text-md-left"><i class="fa fa-comments" style="font-size: 2rem;"></i> Comments
+      <h3 class="mb-2 text-center text-md-left"><i class="ml-3 fa fa-comments" style="font-size: 2rem;"></i> Comments
         (<%= group.comments.length %>)</h3>
       <div class="container-fluid">
-        <div class="row flex-column flex-sm-row border-top border-bottom py-2 align-items-center align-items-sm-left">
+        <div class="row flex-column flex-sm-row border-top py-2 align-items-center align-items-sm-left">
           <% group.comments.map(comment => { %>
           <div class="col-3">
             <img src="<%= comment.author_image %>" class=" avatar rounded-circle">
@@ -102,8 +101,9 @@
         </div>
       </div>
       <div class="text-center mt-4 mb-5">
-        <a class="text-warning font-weight-bold" style="font-size: 1.5rem;">SEE MORE COMMENTS</a>
+        <h1 class="text-warning font-weight-bold" style="font-size: 1.5rem;">YOUR STUDY BUDDIES ARE WAITING FOR YOU! GO TO GROUP NOW</h1>
       </div>
+     </div>
     </div>
   </div>
   </div>
