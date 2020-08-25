@@ -38,7 +38,7 @@ router.get("/explore/:id", function (req, res) {
 
 router.get("/explore", function (req, res) {
   const searchKey = req.query.group || "";
-  Group.find({ view_mode: true }, function (err, groups) {
+  Group.find({ view_mode: true, status: true }, function (err, groups) {
     if (err) {
       console.log(err);
       res.render("groups/explore", { groups: [] });

@@ -31,7 +31,7 @@ router.get("/build", function (req, res) {
       } else {
         let ownGroups = users.groups.myowngroup;
         let filteredGroups = ownGroups.filter((group) =>
-          group.group.group_name.includes(searchKey)
+          group.group.group_name.includes(searchKey) && group.group.status
         );
         res.render("groups/build", { groups: filteredGroups });
       }

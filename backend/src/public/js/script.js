@@ -19,22 +19,26 @@ $(function () {
 document.querySelectorAll("#index .card").forEach(function (card) {
   card.addEventListener("click", function (e) {
     e.preventDefault();
-    window.location.href = "explore/" + card.id;
+   window.location.href =
+      window.location.origin + "/groups/explore/" + card.id;
   });
 });
 
 document.querySelectorAll("#dashboard .card").forEach(function (card) {
   card.addEventListener("click", function (e) {
     e.preventDefault();
-    window.location.href = "dashboard/" + card.id;
+     window.location.href =
+      window.location.origin + "/groups/dashboard/" + card.id;
   });
 });
 
 document.querySelectorAll("#build .card").forEach(function (card) {
   card.addEventListener("click", function (e) {
     e.preventDefault();
-    window.location.href = "build/" + card.id;
+    window.location.href =
+      window.location.origin + "/groups/build/" + card.id;  
   });
+  
 });
 
 const settings = document.querySelector(".settings");

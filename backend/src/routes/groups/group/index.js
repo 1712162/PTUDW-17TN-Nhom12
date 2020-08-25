@@ -57,10 +57,14 @@ router.post("/edit/accesssetting", (req, res) => {
 router.post("/edit/deletegroup", (req, res) => {
   Group.findById(req.body.groupid).exec((err, group) => {
     if (err) {
-      console.log(err);
+      req.flash("error", err.message);
+      res.redirect("/groups/build/");
     } else {
       group.status = false;
-      group.save().then(() => res.redirect("/groups/build/"));
+      group.save().then(() =>{  
+        req.flash("success", "Delete successfully");        
+        res.redirect("/groups/build/");
+      });
     }
   });
 });
