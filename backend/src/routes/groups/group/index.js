@@ -67,7 +67,6 @@ router.post("/edit/deletegroup", (req, res) => {
 
 router.post("/edit/changegroupinfo", upload.single("picture"), (req, res) => {
   var encode_image = "";
-  console.log(req.file);
   if (req.file) {
     const image = req.file.buffer;
     encode_image = image.toString("base64");

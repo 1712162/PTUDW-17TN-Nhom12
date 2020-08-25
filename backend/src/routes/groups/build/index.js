@@ -5,6 +5,8 @@ const User = require("../../../models/user");
 const multer = require("multer");
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
+const mongoose = require('mongoose');
+ const ObjectId = mongoose.Types.ObjectId;
 
 router.get("/build/:id", function (req, res) {
   Group.findById(req.params.id)
@@ -49,7 +51,7 @@ router.post("/build", upload.single("picture"), (req, res) => {
       mimetype: req.file.mimetype
     }
   }
-  group["view_mode"] = "on" ? 0 : 1;
+  group["view_mode"] =  (group["view_mode"] == "private") ? false : true;
   group["max_number"] = Number(group["max_number"]);
   group["owners"] = [];
   group["owners"].push(req.user._id);
@@ -75,6 +77,65 @@ router.post("/build", upload.single("picture"), (req, res) => {
       });
     }
   });
+});
+
+router.post('/build/accept', function (req, res) {
+  Group.findById(req.body.groupid)
+    .exec(function (err, foundGroup) {
+      if (err) {
+        console.error(err);
+        res.redirect("/groups/build/" + req.body.groupid);
+      } else {
+        foundGroup.members.push(ObjectId(req.body.userid));
+        foundGroup.waiting_list = foundGroup.waiting_list.filter((user) => {
+          return user.userenroll.toString() !== req.body.userid;
+        });
+        foundGroup.save();
+        User.findById(req.body.userid)
+          .exec(function (err, foundUser) {
+            if (err) {
+              console.error(err);
+              res.redirect("/groups/build/" + req.body.groupid);
+            } else {
+              foundUser.groups.myjoingroup.push({ group: req.body.groupid });
+              foundUser.groups.myenrollrequestgroup = foundUser.groups.myenrollrequestgroup.filter((group) => {
+                return group.group.toString() !== req.body.groupid;
+              });
+              foundUser.save();
+              console.log("Success");
+              res.redirect("/groups/build/" + req.body.groupid);
+            }
+          });
+      }
+    });
+});
+
+router.post('/build/reject', function (req, res) {
+  Group.findById(req.body.groupid)
+    .exec(function (err, foundGroup) {
+      if (err) {
+        console.error(err);
+        res.redirect("/groups/build/" + req.body.groupid);
+      } else {
+        foundGroup.waiting_list = foundGroup.waiting_list.filter((user) => {
+          return user.userenroll.toString() !== req.body.userid;
+        });
+        foundGroup.save();
+        User.findById(req.body.userid)
+          .exec(function (err, foundUser) {
+            if (err) {
+              console.log(err);
+              res.redirect("/groups/build/" + req.body.groupid);
+            } else {
+              foundUser.groups.myenrollrequestgroup = foundUser.groups.myenrollrequestgroup.filter((group) => {
+                return group.group.toString() !== req.body.groupid;
+              });
+              foundUser.save();
+              res.redirect("/groups/build/" + req.body.groupid);
+            }
+          })
+      }
+    })
 });
 
 module.exports = router;

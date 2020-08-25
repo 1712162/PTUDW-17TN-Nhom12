@@ -52,19 +52,13 @@
                 ></textarea>
               </div>
               <div class="form-group">
-                <div class="custom-control custom-checkbox">
-                  <input
-                    type="checkbox"
-                    name="group[view_mode]"
-                    class="custom-control-input"
-                    id="customCheck1"
-                    value="on"
-                  />
-                  <label class="custom-control-label" for="customCheck1"
-                    >Make this group private</label
-                  >
-                </div>
-              </div>
+                <label class="input-title" for="customCheck1"
+                    >View option</label>
+                <select class="form-control" name="group[view_mode]">
+                  <option value="public">Everyone can see my group</option>
+                  <option value="private">Only me can see my group</option>
+                </select>
+               </div>
               <div class="form-group">
                 <label for="input-file">Cover image</label>
                 <input
