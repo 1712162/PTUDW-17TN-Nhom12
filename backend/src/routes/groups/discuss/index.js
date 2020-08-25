@@ -30,7 +30,7 @@ router.get("/discuss", function (req, res) {
           if (newGroup.status === true) newGroups.push(newGroup);
         });
         let filteredGroups = newGroups.filter((group) =>
-          group.group_name.includes(searchKey) && group.group.status
+          group.group_name.includes(searchKey) && group.status
         );
         res.render("groups/discuss", { groups: filteredGroups });
       }
