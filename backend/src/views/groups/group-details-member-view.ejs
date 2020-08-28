@@ -19,11 +19,11 @@
                       <span aria-hidden="true">&times;</span>
                     </button>
                     <div class="modal-body px-3 text-center">
-                      <form action="/groups/dashboard/leavegroup" method="POST">
+                      <form>
                         <label>Do you really want to quit this group ?</label>
                         <div>
                           <input style="display: none;" type="text" name="groupid" value="<%= group._id %>" />
-                          <button type="submit" id="quitYesButt" class="btn
+                          <button type="button" id="quitYesButt" class="btn
                             btn-warning text-light w-25">Yes</button>
                           <button type="button" class="btn btn-secondary
                             w-25" data-dismiss="modal">No</button>
@@ -41,7 +41,7 @@
                       <span aria-hidden="true">&times;</span>
                     </button>
                     <div class="modal-body px-3">
-                      <form class="p-2">
+                      <form action="/groups/dashboard/leavegroup" method="POST" class="p-2">
                         <label>What do you think about this group ?</label>
                         <div id='rating' class="text-center">
                           <span></span>
@@ -52,13 +52,13 @@
                         </div>
                         <div class="form-group">
                           <label for="input-title">Leave a comment</label>
-                          <textarea class="form-control" id="input-title"></textarea>
+                          <textarea class="form-control" id="input-title" name="comment"></textarea>
+                          <input style="display: none;" type="text" name="groupid" value="<%= group._id %>" />
                         </div>
                         <div>
                           <div class="button-group float-right">
-                            <button type="button" class="btn btn-warning
-                              text-light" data-dismiss="modal">OK</button>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Skip</button>
+                            <button type="submit" class="btn btn-warning
+                              text-light">OK</button>
                           </div>
                         </div>
                       </form>
@@ -86,16 +86,18 @@
       <h3 class="mb-2 text-center text-md-left"><i class="ml-3 fa fa-comments" style="font-size: 2rem;"></i> Comments
         (<%= group.comments.length %>)</h3>
       <div class="container-fluid">
-        <div class="row flex-column flex-sm-row border-top py-2 align-items-center align-items-sm-left">
+        <div class="flex-column">
           <% group.comments.map(comment => { %>
-          <div class="col-3">
-            <img src="<%= comment.author_image %>" class=" avatar rounded-circle">
-            <p class="m-2 font-weight-bold"><%= comment.author_name %></p>
-          </div>
-          <div class="col-9">
+          <div class="row py-2 border-top">
+            <div class="col-3">
+            <img src="data:<%= comment.author_image.mimetype %>;base64,<%= comment.author_image.data %>" class=" avatar rounded-circle">
+            <p class="ml-4 font-weight-bold"><%= comment.author_name %></p>
+            </div>
+            <div class="col-9">
             <p class="card-subtitle mb-2"><small
                 class="text-muted"><%= group.created_at.toLocaleDateString('en-CA') %></small></p>
             <p><%= comment.content  %></p>
+          </div>
           </div>
           <% }) %>
         </div>

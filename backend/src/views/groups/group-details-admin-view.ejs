@@ -71,12 +71,12 @@
       <h3 class="mb-2 text-center text-md-left"><i class="ml-3 fa fa-comments" style="font-size: 2rem;"></i> Comments
         (<%= group.comments.length %>)</h3>
       <div class="container-fluid">
-        <div class="row flex-column flex-sm-row py-2 align-items-center align-items-sm-left">
+        <div class="flex-column">
           <% group.comments.map(comment => { %>
-          <div class="border-top">
+          <div class="row py-2 border-top">
             <div class="col-3">
-              <img src="<%= comment.author_image %>" class=" avatar rounded-circle">
-              <p class="m-2 font-weight-bold"><%= comment.author_name %></p>
+              <img src="data:<%= comment.author_image.mimetype %>;base64,<%= comment.author_image.data %>" class=" avatar rounded-circle">
+              <p class="ml-4 font-weight-bold"><%= comment.author_name %></p>
             </div>
             <div class="col-9">
               <p class="card-subtitle mb-2"><small

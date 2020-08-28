@@ -99,8 +99,9 @@ if (quitGroupButt)
 const quitYesButt = document.getElementById("quitYesButt");
 if (quitYesButt)
   quitYesButt.addEventListener("click", function (e) {
+    e.preventDefault();
     $("#quitGroupForm").modal("hide");
-    // $('#commentForm').modal('show');
+    $('#commentForm').modal('show');
   });
 
 const ratings = document.querySelector("#rating");

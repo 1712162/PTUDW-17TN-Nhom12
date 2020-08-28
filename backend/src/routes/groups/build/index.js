@@ -102,7 +102,6 @@ router.post('/build/accept', function (req, res) {
                 return group.group.toString() !== req.body.groupid;
               });
               foundUser.save();
-              console.log("Success");
               res.redirect("/groups/build/" + req.body.groupid);
             }
           });
