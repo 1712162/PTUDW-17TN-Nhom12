@@ -1,4 +1,28 @@
 <%- include("../partials/chat-header") %>
+   <link rel="stylesheet"
+            href="/css/dark-mode/dark-mode.css">
+    </head>
+    <body>
+
+        <header class="header-discuss">
+            <div class="header-back">
+                <button class="btn btn-secondary back">&lt; Home</button>
+            </div>
+            <div class="header-name-group"><%= group.group_name %></div>
+            <div class="dropdown header-dropdown-mode">
+                <button class="btn btn-secondary dropdown-toggle" type="button"
+                    id="dropdownModeButton" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Dark Mode
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownModeButton">
+                    <a class="dropdown-item"
+                        href="../light-mode/light-mode.html">Light Mode</a>
+                    <a class="dropdown-item" href="#">Dark Mode</a>
+                </div>
+            </div>
+
+        </header>
   <section class="body-discuss container-fluid">
             <div class="row">
                 <div class="content col-8">

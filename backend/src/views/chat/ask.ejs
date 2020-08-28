@@ -1,4 +1,28 @@
 <%- include("../partials/chat-header") %>
+   <link rel="stylesheet"
+            href="/css/dark-mode/ask-dark.css">
+    </head>
+    <body>
+
+        <header class="header-discuss">
+            <div class="header-back">
+                <button class="btn btn-secondary back">&lt; Home</button>
+            </div>
+            <div class="header-name-group"><%= group.group_name %></div>
+            <div class="dropdown header-dropdown-mode">
+                <button class="btn btn-secondary dropdown-toggle" type="button"
+                    id="dropdownModeButton" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Dark Mode
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownModeButton">
+                    <a class="dropdown-item"
+                        href="../light-mode/light-mode.html">Light Mode</a>
+                    <a class="dropdown-item" href="#">Dark Mode</a>
+                </div>
+            </div>
+
+        </header>
   <section class="body-discuss container-fluid">
             <div class="row">
                 <div class="content col-8">
@@ -15,26 +39,27 @@
                         <a href="/chat/<%= group._id %>/buddies" class="option
                             buddies-option">Buddies</a>
                     </div>
-                     <div class="ask-content">
+                     <form class="ask-content" action="/chat/<%= group._id %>/ask" method="POST">
                         <div class="description description-title">Title</div>
                         <div class="input-group title">
                             <!-- prettier-ignore-attribute -->
                             <textarea class="form-control"
+                                name="post[title]"
                                 aria-label="With textarea"
                                 placeholder="Type your title"></textarea>
                         </div>
                         <div class="description description-question">Question</div>
                         <div class="input-group question">
                             <textarea class="form-control" aria-label="With
-                                textarea" placeholder="Type your question"></textarea>
+                                textarea" name="post[content]" placeholder="Type your question"></textarea>
                         </div>
                         <div class="description description-tag">Tag</div>
                         <div class="input-group tag">
-                            <textarea class="form-control" aria-label="With
+                            <textarea class="form-control"  name="post[tag]" aria-label="With
                                 textarea" placeholder="Add tags"></textarea>
                         </div>
                         <div class="button-container">
-                            <button class="btn btn-primary">Post</button>
+                            <button type="submit" class="btn btn-primary">Post</button>
                         </div>
-                    </div>
+                    </form>
 <%- include("../partials/chat-footer") %>

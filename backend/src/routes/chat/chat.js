@@ -4,7 +4,6 @@ const discussRoute = require('./discuss');
 const askRoute = require('./ask');
 const Group = require('../../models/group');
 router.use("/:id", function(req, res, next) {
-    console.log(req.params.id);
     Group.findById(req.params.id, function(err, foundedGroup) {
         if (err) {
             req.flash("error", err.message);
