@@ -29,6 +29,7 @@ const backButt = document.querySelector(".back");
 if (backButt) {
   backButt.addEventListener("click", function(e) {
     e.preventDefault();
-    window.location.href = '../../explore/explore.html';
+     window.location.href =
+      window.location.origin + "/groups/explore/";
   })
 }
