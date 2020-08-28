@@ -1,0 +1,24 @@
+<%- include("../partials/chat-header") %>
+                     <div class="ask-content">
+                        <div class="description description-title">Title</div>
+                        <div class="input-group title">
+                            <!-- prettier-ignore-attribute -->
+                            <textarea class="form-control"
+                                aria-label="With textarea"
+                                placeholder="Type your title"></textarea>
+                        </div>
+                        <div class="description description-question">Question</div>
+                        <div class="input-group question">
+                            <textarea class="form-control" aria-label="With
+                                textarea" placeholder="Type your question"></textarea>
+                        </div>
+                        <div class="description description-tag">Tag</div>
+                        <div class="input-group tag">
+                            <textarea class="form-control" aria-label="With
+                                textarea" placeholder="Add tags"></textarea>
+                        </div>
+                        <div class="button-container">
+                            <button class="btn btn-primary">Post</button>
+                        </div>
+                    </div>
+<%- include("../partials/chat-footer") %>

@@ -37,7 +37,7 @@ const init = () => {
 
   app.use(authRoutes);
   app.use('/groups', middleware.isLoggedIn, groupsRoutes);
-  app.use('/chat/:id',middleware.isLoggedIn, chatRoutes);
+  app.use('/chat',middleware.isLoggedIn, chatRoutes);
   app.use(express.static('public'));
   app.listen(3000, function () {
     console.log('Listening to port 3000');
