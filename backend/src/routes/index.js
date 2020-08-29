@@ -46,7 +46,7 @@ const init = () => {
 
   app.use(authRoutes);
   app.use('/groups', middleware.isLoggedIn, groupsRoutes);
-  app.use('/chat/:id',middleware.isLoggedIn, chatRoutes);
+  app.use('/chat',middleware.isLoggedIn, chatRoutes);
   app.use(express.static('public'));
 
   io.on('connection', socketHandler)

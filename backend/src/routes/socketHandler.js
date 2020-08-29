@@ -1,18 +1,19 @@
-var onlineUsers = {}
-var onlineSockets = {}
+var activeUsers = {}
+var activeSockets = {}
+var activeGroups = {}
 module.exports = function(socket) {
   socket.on('disconnect', () => {
-	let userName = onlineUsers[socket];
+	let userName = activeUsers[socket];
 	socket.broadcast.emit('offline', {userName: userName});
-	delete onlineSockets[userName];
-	delete onlineUsers[socket];
-	console.log(Object.keys(onlineSockets))
+	delete activeSockets[userName];
+	delete activeUsers[socket];
+	console.log(Object.keys(activeSockets))
   });
   socket.on('hello', (data) => {
 	console.log(data)
 	let userName = data.userName;
-	onlineUsers[socket] = userName;
-	onlineSockets[userName] = socket;
-	console.log(Object.keys(onlineSockets))
+	activeUsers[socket] = userName;
+	activeSockets[userName] = socket;
+	console.log(Object.keys(activeSockets))
 });
 }
