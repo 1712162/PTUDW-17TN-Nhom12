@@ -1,5 +1,5 @@
 <%- include("../partials/chat-header") %>
-<link rel="stylesheet" href="/css/dark-mode/ask-dark.css">
+<link rel="stylesheet" href="/css/dark-mode/file-dark-mode.css">
 </head>
 
 <body>
@@ -20,6 +20,7 @@
     </div>
 
   </header>
+
   <section class="body-discuss container-fluid">
     <div class="row">
       <div class="content col-8">
@@ -28,34 +29,40 @@
                             discuss-option">Discuss</a>
           <span class="separate-option">|</span>
           <a href="/chat/<%= group._id %>/file" class="option
-                            file-option">File</a>
+                            file-option active">File</a>
           <span class="separate-option">|</span>
           <span class="separate-option">|</span>
-          <a href="/chat/<%= group._id %>/ask" class="option ask-option active">Ask</a>
+          <a href="/chat/<%= group._id %>/ask" class="option ask-option">Ask</a>
           <span class="separate-option">|</span>
           <a href="/chat/<%= group._id %>/buddies" class="option
                             buddies-option">Buddies</a>
         </div>
-        <form class="ask-content" action="/chat/<%= group._id %>/ask" method="POST">
-          <div class="description description-title">Title</div>
-          <div class="input-group title">
-            <!-- prettier-ignore-attribute -->
-            <textarea class="form-control" name="post[title]" aria-label="With textarea"
-              placeholder="Type your title"></textarea>
+
+        <div class="search-file input-group mb-3">
+          <input type="text" class="form-control" placeholder="Search file" aria-label="Recipient's username"
+            aria-describedby="button-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
           </div>
-          <div class="description description-question">Question</div>
-          <div class="input-group question">
-            <textarea class="form-control" aria-label="With
-                                textarea" name="post[content]" placeholder="Type your question"></textarea>
+        </div>
+
+        <!-- Add what you want -->
+        <div class="list-file-uploaded">
+          <div class="item-file-uploaded">
+            <a href="#" class="link-item-file-uploaded">file.pdf</a>
+            <div class="time-item-file-uploaded">3 day ago</div>
+            <div class="author-item-file-uploaded">hqd09</div>
           </div>
-          <div class="description description-tag">Tag</div>
-          <div class="input-group tag">
-            <textarea class="form-control" name="post[tag]" aria-label="With
-                                textarea" placeholder="Add tags"></textarea>
-          </div>
-          <div class="button-container">
-            <button type="submit" class="btn btn-primary">Post</button>
-          </div>
-        </form>
+        </div>
+
+        <div class="custom-file">
+          <div class="form-description">Want to upload your file?</div>
+          <form>
+            <label class="btn btn-primary" for="upload">
+              Upload
+              <input class="file-browse isVisuallyHidden" id="upload" type="file" multiple required />
+            </label>
+          </form>
+        </div>
       </div>
       <%- include("../partials/chat-footer") %>

@@ -1,6 +1,7 @@
 const authRoutes = require('./auth/auth');
 const groupsRoutes = require('./groups/groups');
 const chatRoutes = require('./chat/chat');
+
 const init = () => {
   const express = require('express');
   const app = express();
@@ -37,7 +38,7 @@ const init = () => {
 
   app.use(authRoutes);
   app.use('/groups', middleware.isLoggedIn, groupsRoutes);
-  app.use('/chat',middleware.isLoggedIn, chatRoutes);
+  app.use('/chat', middleware.isLoggedIn, chatRoutes);
   app.use(express.static('public'));
   app.listen(3000, function () {
     console.log('Listening to port 3000');

@@ -1,6 +1,7 @@
 <%- include("../partials/chat-header") %>
-<link rel="stylesheet" href="/css/dark-mode/ask-dark.css">
+<link rel="stylesheet" href="/css/dark-mode/buddies-dark.css">
 </head>
+
 
 <body>
 
@@ -20,6 +21,7 @@
     </div>
 
   </header>
+
   <section class="body-discuss container-fluid">
     <div class="row">
       <div class="content col-8">
@@ -31,31 +33,26 @@
                             file-option">File</a>
           <span class="separate-option">|</span>
           <span class="separate-option">|</span>
-          <a href="/chat/<%= group._id %>/ask" class="option ask-option active">Ask</a>
+          <a href="/chat/<%= group._id %>/ask" class="option ask-option">Ask</a>
           <span class="separate-option">|</span>
           <a href="/chat/<%= group._id %>/buddies" class="option
-                            buddies-option">Buddies</a>
+                            buddies-option active">Buddies</a>
         </div>
-        <form class="ask-content" action="/chat/<%= group._id %>/ask" method="POST">
-          <div class="description description-title">Title</div>
-          <div class="input-group title">
-            <!-- prettier-ignore-attribute -->
-            <textarea class="form-control" name="post[title]" aria-label="With textarea"
-              placeholder="Type your title"></textarea>
+
+        <div class="list-friends">
+          <% groupMembers.map(member => { %>
+          <div class="friend">
+            <div class="container-avatar">
+              <div class="image-avatar">
+                <img src="/assets/img/empty.jpg" alt="Avatar" class="img-fluid">
+              </div>
+            </div>
+            <div class="name-user">
+              <%= member.username %>
+            </div>
           </div>
-          <div class="description description-question">Question</div>
-          <div class="input-group question">
-            <textarea class="form-control" aria-label="With
-                                textarea" name="post[content]" placeholder="Type your question"></textarea>
-          </div>
-          <div class="description description-tag">Tag</div>
-          <div class="input-group tag">
-            <textarea class="form-control" name="post[tag]" aria-label="With
-                                textarea" placeholder="Add tags"></textarea>
-          </div>
-          <div class="button-container">
-            <button type="submit" class="btn btn-primary">Post</button>
-          </div>
-        </form>
+          <% }) %>
+        </div>
+
       </div>
       <%- include("../partials/chat-footer") %>
