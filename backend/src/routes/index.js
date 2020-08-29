@@ -15,6 +15,7 @@ const init = () => {
   const User = require('../models/user');
   const middleware = require('../middleware');
   const path = require('path');
+  const socketHandler = require('./socketHandler');
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(bodyParser.json());
 
@@ -48,16 +49,11 @@ const init = () => {
   app.use('/chat/:id',middleware.isLoggedIn, chatRoutes);
   app.use(express.static('public'));
 
+  io.on('connection', socketHandler)
   server.listen(3000, function () {
     console.log(`Listening to port ${PORT}`);
   });
 
-  io.on('connection', (socket) => {
-    console.log('a user connected');
-    socket.on('disconnect', () => {
-      console.log('user disconnected');
-    });
-  });
 };
 
 module.exports = {
