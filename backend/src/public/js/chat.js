@@ -28,23 +28,24 @@ function myMessage(message) {
 
 
 function sendMsg() {
-	let message = document.getElementById("input-message").value;
-	socket.emit(
-		'message',
-		{
-			userName: globalVar.userName,
-			groupName: globalVar.groupName,
-			message: message
-		}
-	)
-	document.getElementById("input-message").value = '';
+	let message = document.getElementById("input-message").value.trim();
+	if (message.length > 0) {
+		socket.emit(
+			'message',
+			{
+				userName: globalVar.userName,
+				groupName: globalVar.groupName,
+				message: message
+			}
+		)
+		document.getElementById("input-message").value = '';
+	}
 }
 
 function recvMsg(data) {
 	let author = data.userName;
 	let message = data.message;
 	let messageBox = document.getElementById('message-box');
-	console.log(data)
 	if (author == globalVar.userName)
 		messageBox.insertAdjacentHTML(
 			'beforeend', myMessage(message));
@@ -52,6 +53,16 @@ function recvMsg(data) {
 		messageBox.insertAdjacentHTML(
 			'beforeend', anotherMessage(author, message));
 }
+
+
+document.getElementById("input-message").addEventListener("keydown", ({key}) => {
+    if (key === "Enter") {
+        event.preventDefault();
+        sendMsg();
+    }
+})
+
+console.log(globalVar)
 
 socket.emit('hello', {
 	userName: globalVar.userName,

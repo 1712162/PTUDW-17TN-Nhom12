@@ -190,13 +190,28 @@
                     </div>
                     <div class="content-group-message">
                         <div id='message-box'>
+                            <%for (let i = 0; i < locals.messages.length; ++i) {%>
+                                <%if (locals.messages[i].author == currentUser.username) {%>
+                                    <div class="my-message">
+                                        <div class="my-message-content"><%=locals.messages[i].message%>
+                                        </div>
+                                    </div>
+                                <%} else {%>
+                                    <div class="another-message">
+                                        <div class="image"><img src="<%='data:image/png;base64, ' + locals.messages[i].profile_image.data%>" class="img-fluid"/>
+                                        </div>
+                                        <div class="message-content"><%=locals.messages[i].message%>
+                                        </div>
+                                    </div>
+                                <%}%>
+                            <%}%>
                         </div>
                         <div class="buffer-input-message">
                         </div>
                     </div>
                     <div class="col-3 input-message">
                         <input id='input-message' class="form-control" placeholder="Type something"/>
-                        <i class="send fas fa-paper-plane"  onclick="sendMsg();event.preventDefault();"></i>
+                        <i class="send fas fa-paper-plane" onclick="sendMsg();event.preventDefault();"></i>
                         <i class="open fas fa-comments d-none fa-2x"></i>
                     </div>
                 </div>
