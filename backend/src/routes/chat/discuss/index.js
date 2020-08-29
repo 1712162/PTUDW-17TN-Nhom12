@@ -1,7 +1,16 @@
+const Group = require("../../../models/group");
+const User = require("../../../models/user");
+
 const express = require('express');
 const router = express.Router();
 router.get("/:groupID", (req, res) => {
-    console.log(req.params)
-    res.render("chat/chat.ejs", {groupName: req.params.groupID});
+    Group.findById(req.params.groupID, function (err, foundGroup) {
+        if (err) {
+            return res.redirect("/");
+        } else {
+            res.render("chat/chat.ejs", {group: foundGroup});
+        }
+    });
+
 })
 module.exports = router;

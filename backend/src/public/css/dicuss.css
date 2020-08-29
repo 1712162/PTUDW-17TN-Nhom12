@@ -123,8 +123,8 @@ body {
   background-color: #ffffff;
   width: 380px;
   height: 60px;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center;
+  align-items: center; */
 }
 
 .body-discuss .row .message .search-message input, .body-discuss .row .message .input-message input {
@@ -153,9 +153,8 @@ body {
   position: fixed;
   z-index: 100;
   bottom: 0;
-  right: 20px;
+  right: 25px;
   height: 60px;
-  width: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
