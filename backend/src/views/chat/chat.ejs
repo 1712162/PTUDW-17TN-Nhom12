@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>VSG | Discuss</title>
-        <link rel="stylesheet"
-            href="/css/vender/bootstrap/bootstrap.min.css">
-        <script src="https://kit.fontawesome.com/85ab26cb10.js"
-            crossorigin="anonymous"></script>
+<%- include("../partials/chat-header") %>
         <link rel="stylesheet"
             href="/css/dicuss.css">
     </head>
@@ -181,55 +172,7 @@
                         <div class="next">Next</div>
                     </div>
                 </div>
-
-                <div class="message col-4" id="test">
-                    <div class="search-message">
-                        <i class="close far fa-window-close"></i>
-                    </div>
-                    <div class="buffer-search-message">
-                    </div>
-                    <div class="content-group-message">
-                        <div id='message-box'>
-                            <%for (let i = 0; i < locals.messages.length; ++i) {%>
-                                <%if (locals.messages[i].author == currentUser.username) {%>
-                                    <div class="my-message">
-                                        <div class="my-message-content"><%=locals.messages[i].message%>
-                                        </div>
-                                    </div>
-                                <%} else {%>
-                                    <div class="another-message">
-                                        <div class="image"><img src="<%='data:image/png;base64, ' + locals.messages[i].profile_image.data%>" class="img-fluid"/>
-                                        </div>
-                                        <div class="message-content"><%=locals.messages[i].message%>
-                                        </div>
-                                    </div>
-                                <%}%>
-                            <%}%>
-                        </div>
-                        <div class="buffer-input-message">
-                        </div>
-                    </div>
-                    <div class="col-3 input-message">
-                        <input id='input-message' class="form-control" placeholder="Type something" style="color: var(--message-content-color);"/>
-                        <i class="send fas fa-paper-plane" onclick="sendMsg();event.preventDefault();"></i>
-                        <i class="open fas fa-comments d-none fa-2x"></i>
-                    </div>
-                </div>
-            </div>
+								<%- include("../partials/chat-box") %>
+							</div>
         </section>
-
-        <!-- JS, Popper.js, and jQuery -->
-        <script>
-            var globalVar = {
-                userName: '<%=currentUser.username%>',
-                groupName: '<%=locals.group.group_name%>'
-            };
-        </script>
-        <script src="/js/vender/jquery-3.5.1.slim.min.js"></script>
-        <script src="/js/vender/popper.min.js"></script>
-        <script src="/js/vender/bootstrap.min.js"></script>
-        <script src="/js/vender/socket.io.js"></script>
-        <script src="/js/chat.js"></script>
-        <script src="/js/open-close.js"></script>
-    </body>
-</html>
+<%- include("../partials/chat-footer") %>
