@@ -5,6 +5,8 @@ const PORT = process.env.PORT || 3000;
 const init = () => {
   const express = require('express');
   const app = express();
+  const server = require('http').createServer(app);
+  const io = require('socket.io')(server);
   const bodyParser = require('body-parser');
   const methodOverride = require('method-override');
   const flash = require('connect-flash');
@@ -13,6 +15,7 @@ const init = () => {
   const User = require('../models/user');
   const middleware = require('../middleware');
   const path = require('path');
+  const socketHandler = require('./socketHandler');
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(bodyParser.json());
 
@@ -43,11 +46,14 @@ const init = () => {
 
   app.use(authRoutes);
   app.use('/groups', middleware.isLoggedIn, groupsRoutes);
-  app.use('/chat', middleware.isLoggedIn, chatRoutes);
+  app.use('/chat',middleware.isLoggedIn, chatRoutes);
+  app.use(express.static('public'));
 
-  app.listen(PORT, function () {
-    console.log('Listening to port ' + PORT);
+  io.on('connection', socketHandler)
+  server.listen(3000, function () {
+    console.log(`Listening to port ${PORT}`);
   });
+
 };
 
 module.exports = {

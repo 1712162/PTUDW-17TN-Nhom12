@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Post = require('../../../models/post');
 const Group = require('../../../models/group');
+const Message = require('../../../models/message');
 
 router.get("/:id/buddies", (req, res) => {
   const str = req.originalUrl;
@@ -22,7 +23,24 @@ router.get("/:id/buddies", (req, res) => {
       foundGroup.owners.forEach((item) => {
         members.push(item);
       });
-      res.render("chat/buddies.ejs", { groupMembers: members });
+      let groupName = foundGroup.group_name;
+      Message.find(
+          {group_name: groupName},"author message date profile_image",
+          (err, messages) => {
+              messages.sort(function(a, b) {
+                  let msgA = new Date(a.date);
+                  let msgB = new Date(b.date);
+                  if (msgA < msgB) return -1;
+                  if (msgA > msgB) return 1;
+                  return 0;
+              });
+              res.render("chat/buddies.ejs",{
+                groupMembers: members,
+                group: foundGroup,
+                messages: messages
+              });
+          }
+      )
     });
 });
 

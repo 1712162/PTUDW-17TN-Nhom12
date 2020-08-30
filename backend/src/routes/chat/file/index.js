@@ -2,8 +2,9 @@ const express = require('express');
 const router = express.Router();
 const Post = require('../../../models/post');
 const Group = require('../../../models/group');
+const Message = require('../../../models/message');
 
-router.get("/:id/file", (req, res) => {
+router.get("/:groupID/file", (req, res) => {
   // const str = req.originalUrl;
   // const groupId = str.slice(str.indexOf("/", 1) + 1, str.lastIndexOf("/"));
 
@@ -24,7 +25,27 @@ router.get("/:id/file", (req, res) => {
   //     });
   //     res.render("chat/buddies.ejs", { groupMembers: members });
   //   });
-  res.render("chat/file.ejs");
+  Group.findById(req.params.groupID, function (err, foundGroup) {
+    if (err) {
+        console.log(err);
+    } else {
+        let groupName = foundGroup.group_name;
+        Message.find(
+            {group_name: groupName},"author message date profile_image",
+            (err, messages) => {
+                messages.sort(function(a, b) {
+                    let msgA = new Date(a.date);
+                    let msgB = new Date(b.date);
+                    if (msgA < msgB) return -1;
+                    if (msgA > msgB) return 1;
+                    return 0;
+                });
+                res.render("chat/file.ejs",
+                    {group: foundGroup, messages: messages});
+            }
+        )
+    }
+  });
 });
 
 

@@ -1,25 +1,15 @@
 <%- include("../partials/chat-header") %>
-<link rel="stylesheet" href="/css/dark-mode/dark-mode.css">
-</head>
+        <link rel="stylesheet"
+            href="/css/dicuss.css">
+    </head>
+    <body>
 
-<body style="background-color: #141D26;">
-
-	<header class="header-discuss">
-		<div class="header-back">
-			<button class="btn btn-secondary back">&lt; Home</button>
-		</div>
-		<div class="header-name-group"><%= group.group_name %></div>
-		<div class="dropdown header-dropdown-mode">
-			<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownModeButton" data-toggle="dropdown"
-				aria-haspopup="true" aria-expanded="false">
-				Dark Mode
-			</button>
-			<div class="dropdown-menu" aria-labelledby="dropdownModeButton">
-				<a class="dropdown-item" href="../light-mode/light-mode.html">Light Mode</a>
-				<a class="dropdown-item" href="#">Dark Mode</a>
-			</div>
-		</div>
-
+        <header class="header-discuss">
+            <div class="header-back">
+                <button class="btn btn-secondary back">&lt; Home</button>
+            </div>
+            <div class="header-name-group"><%=locals.group.group_name%></div>
+        </header>
 	</header>
 	<section class="body-discuss container-fluid">
 		<div class="row">
@@ -161,25 +151,28 @@
 								<i class="far fa-comment-alt"></i>
 								<div class="number-comment
                                         font-weight-bold">0</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-page">
+                        <div class="previous">Previous</div>
+                        <span class="separate-page">|</span>
+                        <span class="page-number">1</span>
+                        <span class="separate-page">|</span>
+                        <span class="page-number">2</span>
+                        <span class="separate-page">|</span>
+                        <span class="page-number">3</span>
+                        <span class="separate-page">|</span>
+                        <span class="page-number">4</span>
+                        <span class="separate-page">|</span>
+                        <span class="separate-three-dot">...</span>
+                        <span class="page-number last-page">100</span>
+                        <span class="separate-page">|</span>
+                        <div class="next">Next</div>
+                    </div>
+                </div>
+								<%- include("../partials/chat-box") %>
 							</div>
-						</div>
-					</div>
-				</div>
-				<div class="list-page">
-					<div class="previous">Previous</div>
-					<span class="separate-page">|</span>
-					<span class="page-number">1</span>
-					<span class="separate-page">|</span>
-					<span class="page-number">2</span>
-					<span class="separate-page">|</span>
-					<span class="page-number">3</span>
-					<span class="separate-page">|</span>
-					<span class="page-number">4</span>
-					<span class="separate-page">|</span>
-					<span class="separate-three-dot">...</span>
-					<span class="page-number last-page">100</span>
-					<span class="separate-page">|</span>
-					<div class="next">Next</div>
-				</div>
-			</div>
-			<%- include("../partials/chat-footer") %>
+        </section>
+<%- include("../partials/chat-footer") %>

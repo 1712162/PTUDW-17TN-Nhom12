@@ -36,9 +36,9 @@ document.querySelectorAll("#build .card").forEach(function (card) {
   card.addEventListener("click", function (e) {
     e.preventDefault();
     window.location.href =
-      window.location.origin + "/groups/build/" + card.id;  
+      window.location.origin + "/groups/build/" + card.id;
   });
-  
+
 });
 
 const settings = document.querySelector(".settings");
