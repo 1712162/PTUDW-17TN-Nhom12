@@ -10,6 +10,8 @@ module.exports = function(socket) {
 	socket.on('disconnect', () => {
 		let userName = userSockets[socket];
 		let groupName = groupSockets[socket];
+		if (groupName == null || userName == null)
+			return;
 		delete groupUsers[groupName][userName];
 		delete userSockets[socket];
 		delete groupSockets[socket];
@@ -21,7 +23,6 @@ module.exports = function(socket) {
   	socket.on('hello', (data) => {
 		let userName = data.userName;
 		let groupName = data.groupName;
-
 		if (!(groupName in groupUsers))
 			groupUsers[groupName] = {};
 

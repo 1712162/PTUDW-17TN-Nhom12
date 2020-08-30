@@ -3,6 +3,14 @@
 <script src="/js/vender/popper.min.js"></script>
 <script src="/js/vender/bootstrap.min.js"></script>
 <script src="/js/open-close.js"></script>
+<script>
+	var globalVar = {
+			userName: '<%=currentUser.username%>',
+			groupName: '<%=locals.group.group_name%>'
+	};
+</script>
+<script src="/js/vender/socket.io.js"></script>
+<script src="/js/chat.js"></script>
 </body>
 
 </html>

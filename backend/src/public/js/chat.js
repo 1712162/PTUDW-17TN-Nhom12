@@ -25,8 +25,6 @@ function myMessage(message) {
 	return html;
 }
 
-
-
 function sendMsg() {
 	let message = document.getElementById("input-message").value.trim();
 	if (message.length > 0) {
@@ -42,6 +40,11 @@ function sendMsg() {
 	}
 }
 
+function scrollBottom() {
+	let scrollbar = document.getElementById('test');
+	scrollbar.scrollTop = scrollbar.scrollHeight;
+}
+
 function recvMsg(data) {
 	let author = data.userName;
 	let message = data.message;
@@ -52,6 +55,8 @@ function recvMsg(data) {
 	else
 		messageBox.insertAdjacentHTML(
 			'beforeend', anotherMessage(author, message));
+
+	scrollBottom();
 }
 
 
@@ -60,12 +65,12 @@ document.getElementById("input-message").addEventListener("keydown", ({key}) => 
         event.preventDefault();
         sendMsg();
     }
-})
+});
 
-console.log(globalVar)
+scrollBottom();
 
 socket.emit('hello', {
 	userName: globalVar.userName,
 	groupName: globalVar.groupName
 });
-socket.on('message', recvMsg)
+socket.on('message', recvMsg);

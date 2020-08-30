@@ -1,5 +1,5 @@
 <div class="message col-4" id="test">
-	<div class="search-message">
+	<div class="col-4 search-message">
 			<i class="close far fa-window-close"></i>
 	</div>
 	<div class="buffer-search-message">
@@ -25,17 +25,9 @@
 			<div class="buffer-input-message">
 			</div>
 	</div>
-	<div class="col-3 input-message">
+	<div class="col-4 input-message">
 			<input id='input-message' class="form-control" placeholder="Type something" style="color: var(--message-content-color);"/>
 			<i class="send fas fa-paper-plane" onclick="sendMsg();event.preventDefault();"></i>
 			<i class="open fas fa-comments d-none fa-2x"></i>
 	</div>
-	<script>
-		var globalVar = {
-				userName: '<%=currentUser.username%>',
-				groupName: '<%=locals.group.group_name%>'
-		};
-	</script>
-  <script src="/js/vender/socket.io.js"></script>
-	<script src="/js/chat.js"></script>
 </div>
