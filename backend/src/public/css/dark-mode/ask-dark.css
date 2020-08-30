@@ -119,20 +119,18 @@ body {
 .body-discuss .row .message .search-message {
   position: fixed;
   display: flex;
-  background-color: var(--background-message);
-  width: 380px;
   height: 60px;
-  justify-content: center;
-  align-items: center;
+  background-color: var(--background-message);
 }
 
-.body-discuss .row .message .search-message input, .body-discuss .row .message .input-message input {
+.body-discuss .row .message .input-message input {
   border-radius: 20px;
   background-color: var(--message-content-background-color);
   border-color: var(--message-content-background-color);
 }
 
-.body-discuss .row .message .search-message i, .body-discuss .row .message .input-message i {
+.body-discuss .row .message .search-message i,
+.body-discuss .row .message .input-message i {
   width: 80px;
   display: flex;
   align-items: center;
@@ -141,7 +139,8 @@ body {
   cursor: pointer;
 }
 
-.body-discuss .row .message .search-message i:hover, .body-discuss .row .message .input-message i:hover {
+.body-discuss .row .message .search-message i:hover,
+.body-discuss .row .message .input-message i:hover {
   color: var(--message-content-color);
 }
 
@@ -154,9 +153,8 @@ body {
   position: fixed;
   z-index: 100;
   bottom: 0;
-  right: 20px;
+  /* right: 20px; */
   height: 60px;
-  width: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -184,16 +182,22 @@ body {
   cursor: pointer;
 }
 
-.body-discuss .row .message .content-group-message .another-message .message-content {
+.body-discuss
+  .row
+  .message
+  .content-group-message
+  .another-message
+  .message-content {
   margin-left: 15px;
   font-family: var(--font-family);
   font-size: 0.8rem;
   font-weight: 600;
-  max-width: 200px;
   background-color: var(--message-content-background-color);
   color: var(--message-content-color);
   padding: 10px;
   border-radius: 10px;
+  width: 250px;
+  word-wrap: break-word;
 }
 
 /* end another message */
@@ -208,16 +212,22 @@ body {
   margin: 30px auto;
 }
 
-.body-discuss .row .message .content-group-message .my-message .my-message-content {
+.body-discuss
+  .row
+  .message
+  .content-group-message
+  .my-message
+  .my-message-content {
   margin-right: 15px;
   font-family: var(--font-family);
   font-size: 0.8rem;
   font-weight: 600;
-  max-width: 200px;
   background-color: var(--my-message-content-background-color);
   color: var(--message-content-color);
   padding: 10px;
   border-radius: 10px;
+  width: 250px;
+  word-wrap: break-word;
 }
 
 /* end my message */
